@@ -140,7 +140,7 @@ mpfr_pow_ui (mpfr_ptr y, mpfr_srcptr x, unsigned long int n, mpfr_rnd_t rnd)
     {
       mpz_t z;
 
-      /* Internal overflow or underflow. However the approximation error has
+      /* Internal overflow or underflow. However, the approximation error has
        * not been taken into account. So, let's solve this problem by using
        * mpfr_pow_z, which can handle it. This case could be improved in the
        * future, without having to use mpfr_pow_z.
