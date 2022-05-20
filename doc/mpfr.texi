@@ -2659,11 +2659,14 @@ standard header before @file{mpfr.h}, to allow @file{mpfr.h} to define
 prototypes for these functions.
 
 @subsection Format String
-The format specification accepted by @code{mpfr_printf} is an extension of the
-@code{printf} one. The conversion specification is of the form:
+The format specification accepted by @code{mpfr_printf} is an extension of
+the @code{gmp_printf} one (itself, an extension of the @code{printf} one).
+The conversion specification is of the form:
+
 @example
 % [flags] [width] [.[precision]] [type] [rounding] conv
 @end example
+
 @samp{flags}, @samp{width}, and @samp{precision} have the same meaning as for
 the standard @code{printf} (in particular, notice that the @samp{precision} is
 related to the number of digits displayed in the base chosen by @samp{conv}
@@ -2687,10 +2690,11 @@ length modifiers defined in the C standard:
 @end multitable
 @end quotation
 
-and the @samp{type} specifiers defined in GMP plus @samp{R} and @samp{P}
-specific to MPFR (the second column in the table below shows the type of the
-argument read in the argument list and the kind of @samp{conv} specifier to
-use after the @samp{type} specifier):
+@noindent
+and the @samp{type} specifiers defined in GMP, plus @samp{R} and @samp{P},
+which are specific to MPFR (the second column in the table below shows the
+type of the argument read in the argument list and the kind of @samp{conv}
+specifier to use after the @samp{type} specifier):
 
 @quotation
 @multitable {(space)} {MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}
@@ -2723,6 +2727,10 @@ not be used with other types.
 
 With conversion specification not involving @samp{P} and @samp{R} types,
 @code{mpfr_printf} behaves exactly as @code{gmp_printf}.
+
+Thus the @samp{conv} specifier @samp{F} is not supported (due to the use
+of @samp{F} as the @samp{type} specifier for @code{mpf_t}), except for
+the @samp{type} specifier @samp{R} (i.e., for @code{mpfr_t} arguments).
 
 The @samp{P} type specifies that a following @samp{d}, @samp{i},
 @samp{o}, @samp{u}, @samp{x}, or @samp{X} conversion specifier applies
