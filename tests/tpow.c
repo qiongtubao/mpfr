@@ -587,7 +587,7 @@ special (void)
       exit (1);
     }
 
-  /* From http://www.terra.es/personal9/ismaeljc/hall.htm */
+  /* From https://web.archive.org/web/20050824044408/http://www.terra.es/personal9/ismaeljc/hall.htm */
   mpfr_set_prec (x, 113);
   mpfr_set_prec (y, 2);
   mpfr_set_prec (z, 169);
