@@ -1,5 +1,20 @@
 2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
 
+	[tools/update-changelog] Use UTC to generate the ChangeLog file.
+
+2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/gitlog-to-changelog] Improve --strip-cherry-pick for this repository.
+
+	Remove all the cherry-pick information from what can be found in
+	the 4.1 branch.
+
+2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/README.dev] "To make a release": corrections about the tag.
+
+	ChangeLog update with tools/update-changelog
+
 	[tests/tnrandom.c] Fixed compilation failure with mini-gmp.
 
 	ChangeLog update with tools/update-changelog
@@ -96,14 +111,7 @@
 
 	Updated version to 4.1.1-rc1 (with tools/update-version).
 
-2022-10-03  Vincent Lefevre  <vincent@vinc17.net>
-
 	Updated URLs.
-
-	Cherry picked from commits
-	  56842a7d093c09c148633a37a5a29715b54e90e7
-	  87b346557fd256f7451f7fe1ce025273e485d6de
-	  be8d67d7cfd42ebf228f6e4638483a844296e4d2
 
 2022-10-03  Vincent Lefevre  <vincent@vinc17.net>
 
@@ -112,7 +120,7 @@
 	The addition of the <branch>-root tag applies only after a branch
 	is created, i.e. for non-patchlevel releases (item 0).
 
-2022-09-19  Vincent Lefevre  <vincent@vinc17.net>
+2022-09-18  Vincent Lefevre  <vincent@vinc17.net>
 
 	Updated doc/texinfo.tex to 2022-09-14.01
 
@@ -153,9 +161,6 @@
 2022-08-27  Vincent Lefevre  <vincent@vinc17.net>
 
 	Added m4/ax_pthread.m4 file, and related updates.
-	(cherry picked from commit 5dd2f9c6c8322776a06c755436b2ec86fe6014d2)
-	(cherry picked from commit e9392049574fa6ba951f86926cfd9f25a4cc6ec6)
-	(cherry picked from commit f11e73c87110a12cd475ab3c1369b4f6a9fb1fe9)
 
 	This adds m4/ax_pthread.m4 from master and changes the following files:
 	* acinclude.m4: updated comment; set CXX and CXXFLAGS.
@@ -305,10 +310,6 @@
 	      been an issue).
 	* tests/tsprintf.c: added related tests.
 
-	(cherry picked from commit 88b2d215b42270c6eb86354921ff78e6c0b0ed89
-	and commits 964dbc5eae61287da141644066a143b560b6c29d (included) to
-	430846657ed2403e9d78cc3b27244c039b01cc22)
-
 2022-05-19  Vincent Lefevre  <vincent@vinc17.net>
 
 	[tests/tnrandom.c] With mini-gmp, disable the tests that check the values.
@@ -376,12 +377,6 @@
 	  "custom interface".
 	* tests/tstckintc.c: added testcases for the macro/function mismatch
 	  issues, being careful with rules that are different in C and C++.
-	(cherry picked from commit 3118c0dabd89fcb3e438d44df617a477dbb28975)
-	(cherry picked from commit 9f94e0311ed53d0c64d4fbca249d19cc4888027e)
-	(cherry picked from commit 881b849206550a107bee0bc4307f678423fb6cda)
-	(cherry picked from commit 2a7e5a8a5835fca8d1401bdf4a9873b46babd224)
-	(cherry picked from commit 2b3e5e6d148f4e979176c8e0fe401e66266308c5)
-	(cherry picked from commit 8dd6413cd54e74363928e5f2c132290a370c5f57)
 
 2022-04-07  Vincent Lefevre  <vincent@vinc17.net>
 
@@ -438,8 +433,6 @@
 	function. So, use it in MPFR_CHECK_LIBM and MPFR_CHECK_LIBQUADMATH.
 	Also updated MPFR_CHECK_LIBM from the current libtool.m4 code, as
 	done in the past.
-	(cherry picked from commit 5c2a876f33c6a2a0d78a09fb721b4dbbc4c34a15)
-	(cherry picked from commit 67157847ab19fb0e607aeabc740b4950082d6738)
 
 2022-01-06  Vincent Lefevre  <vincent@vinc17.net>
 
@@ -498,8 +491,6 @@
 	  * " (modified)" when the working tree has been modified
 	    (compared to HEAD).
 
-	(cherry picked from commits 98c1bfc7d, 2933fad3a..673ab342d, d04dc2653)
-
 2021-10-24  Vincent Lefevre  <vincent@vinc17.net>
 
 	Updated README due to the migration to Inria GitLab.
@@ -512,7 +503,6 @@
 
 	This is used to check that the doc/mpfr.texi UPDATED-MONTH value is
 	up-to-date by comparing it with the date of the latest commit.
-	(cherry picked from commit 136e48c9bec4ff0b74b90778f385de12d2f37c3b)
 
 2021-10-24  Vincent Lefevre  <vincent@vinc17.net>
 
@@ -731,7 +721,7 @@
 	[tests/tdigamma.c] Added testcase.
 	(merged changesets r14430,14432-14433 from the trunk)
 
-2021-02-11  Vincent Lefèvre  <vincent@vinc17.net>
+2021-02-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/jyn_asympt.c] Fixed bug when sin(z)±cos(z) rounds to 0.
 	[tests/tj0.c] Testcase.
@@ -740,8 +730,6 @@
 	[src/digamma.c] Fixed bug in mpfr_digamma_positive when t-u is zero.
 	[tests/tdigamma.c] Testcase.
 	(merged changesets r14399,14401-14404 from the trunk)
-
-2021-02-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/digamma.c] Fixed bug in mpfr_digamma: if x is large, the
 	intermediate precision can be large. This issue may still occur,
@@ -841,7 +829,7 @@
 	Updated a freebsd.org URL (bug tracker).
 	(merged changeset r14104 from the trunk)
 
-2020-07-21  Vincent Lefèvre  <vincent@vinc17.net>
+2020-07-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/get_d128.c] For the special values, avoid double to _Decimal128
 	conversions, as for such conversions, GCC generates from 2 to 3 MB in
@@ -854,8 +842,6 @@
 	This commit should avoid a large part of the problem reported at:
 	  https://gforge.inria.fr/tracker/?func=detail&atid=619&aid=21849&group_id=136
 	(merged changesets r14087-14088 from the trunk)
-
-2020-07-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests] Various corrections for error messages in tests of long double
 	(and double).
@@ -1071,9 +1057,9 @@
 
 	[doc/README.dev] Updated "To make a release".
 
-	[NEWS] Added release name for 4.1.0: "épinards à la crème".
-
 2020-06-10  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[NEWS] Added release name for 4.1.0: "épinards à la crème".
 
 	[doc/mini-gmp] English usage improvement.
 
@@ -1216,11 +1202,11 @@
 	  * src/mpfr-sassert.h: removed MPFR_DECL_STATIC_ASSERT definitions.
 	  * tune/tuneup.c: removed MPFR_DECL_STATIC_ASSERT redefinition.
 
+2020-06-08  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[acinclude.m4] MPFR_CHECK_MP_LIMB_T_VS_LONG: updated comment to say
 	that using MPFR_ASSERTN (as the code tries to do if static assertions
 	are not supported, but currently fails) would be incorrect.
-
-2020-06-08  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[acinclude.m4] In MPFR_CHECK_MP_LIMB_T_VS_INTMAX, do the test only if
 	intmax_t is defined (assuming that it is iff uintmax_t is defined).
@@ -1287,9 +1273,9 @@
 	the exit status values 1..3 to 81..83 in order to avoid confusion, as
 	low values can typically be returned in case of compile or link error.
 
-	[tests/memory.c] Updated a comment.
-
 2020-06-02  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[tests/memory.c] Updated a comment.
 
 	[src/mpfr-longlong.h] Added code to check that mpfr-longlong.h is not
 	included directly; MPFR_NEED_LONGLONG_H must be defined instead.
@@ -1462,7 +1448,7 @@
 	  * src/{get_d64.c,set_d64.c,set_d128.c}: update.
 	  * tests/{tget_set_d64.c,tget_set_d128.c,tversion.c}: update.
 
-2020-04-09  Vincent Lefèvre  <vincent@vinc17.net>
+2020-04-08  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Updated URLs of the GCC mailing-list archives.
 
@@ -2129,7 +2115,7 @@
 	[src/fmma.c] fixed bug (result might be out of exponent range)
 	[tests/tfmma.c] added non-regression test
 
-2020-02-04  Vincent Lefèvre  <vincent@vinc17.net>
+2020-02-03  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Updated the month.
 
@@ -3019,6 +3005,8 @@
 	the -Werror=c++-compat GCC option (it led the "long double" format
 	to be unknown).
 
+2019-01-24  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/trint.c] Fixed C++ compatibility issue (arithmetic on enum)
 	detected by the -Werror=c++-compat GCC option.
 
@@ -3544,12 +3532,12 @@
 
 	[NEWS] + Mini-gmp support via the --with-mini-gmp configure option.
 
+2018-09-17  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Merged the with-mini-gmp branch into the trunk: new --with-mini-gmp
 	configure option to build MPFR against mini-gmp (instead of GMP).
 
 	[doc/mini-gmp] Update.
-
-2018-09-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Merged the latest changes from the trunk.
 
@@ -3691,7 +3679,7 @@
 
 	[src/strtofr.c] added comment
 
-2018-09-11  Vincent Lefèvre  <vincent@vinc17.net>
+2018-09-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Updated the month.
 
@@ -4421,6 +4409,8 @@
 
 	[src/vasprintf.c] Added a FIXME for MPFR_PREC_ARG handling.
 
+2018-07-18  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Shared caches: fix and minor changes.
 	  * Fixed detection and use of C11 thread support: the C11 header is
 	    <threads.h>, not <thread.h>.
@@ -4435,8 +4425,6 @@
 	[tests/tconst_pi.c] Removed an incorrect assertion, as the #else would
 	be applicable when WANT_SHARED_CACHE is defined but not HAVE_PTHREAD
 	(which may occur when MPFR_HAVE_C11_LOCK is defined).
-
-2018-07-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/vasprintf.c] Fixed type in partition_number to be consistent with
 	the end of the function.
@@ -4839,9 +4827,9 @@
 	[tests/{tget_set_d64.c,tget_set_d128.c}] Tests on powers of 10:
 	test negative numbers too.
 
-	[doc/README.dev] Added a note about FP constants and native FP.
-
 2018-06-19  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[doc/README.dev] Added a note about FP constants and native FP.
 
 	[tools/mpfrlint] Check that preprocessing directives have no spaces
 	before.
@@ -4965,7 +4953,7 @@
 	from r12327.
 	[tests/tfmma.c] added non-regression tests
 
-2018-06-03  Vincent Lefèvre  <vincent@vinc17.net>
+2018-06-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mpfr-impl.h] Concerning r12738, the safer code can be avoided
 	with GCC in ISO C mode (__STRICT_ANSI__).
@@ -5203,14 +5191,14 @@
 
 	[tests/tfma.c] Added a comment.
 
+2018-04-18  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tfma.c] Added test_underflow4. This allows to show that the
 	bound MAX (MPFR_PREC (z), MPFR_PREC (s) + 1) in fma.c is optimal:
 	  * If one subtract 1 from the 1st term MPFR_PREC (z), a failure
 	    occurs in test_underflow4.
 	  * If one subtract 1 from the 2nd term MPFR_PREC (s) + 1, a failure
 	    occurs in test_underflow2.
-
-2018-04-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[configure.ac] For the ICC check, also test __INTEL_COMPILER.
 
@@ -5499,7 +5487,7 @@
 	[generic/mparam.h] ensure divhigh_ktab[n] is 0 or < n-1, as now required
 			   since commit r12382
 
-2018-04-03  Vincent Lefèvre  <vincent@vinc17.net>
+2018-04-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mulders.c] Code style / indentation. Added a comment.
 
@@ -5571,6 +5559,8 @@
 	[tests/tfpif.c] Correction just in case MPFR_PREC_BITS > 64.
 
 	Removed trailing whitespace.
+
+2018-03-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/fpif.c]
 	  * Replaced an incorrect comment from r12500 by a correct assertion.
@@ -5656,6 +5646,8 @@
 	[tests/tget_str.c] Fixed failure from r12473 when mpfr_prec_t is an int
 	(missing casts for sprintf / printf).
 
+2018-03-09  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tget_str.c] C++ compatibility.
 
 	[tests/tget_str.c] Use tests_allocate / tests_free.
@@ -5730,13 +5722,11 @@
 	[tests/tfma.c] Fixed bug from r12407 with 32-bit long and 64-bit limbs
 	(e.g. as under 64-bit MS Windows).
 
-2018-02-27  Vincent Lefèvre  <vincent@vinc17.net>
+2018-02-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[acinclude.m4] Correction for test of the fallback to __float128:
 	in the test program, define the variable outside main() in order to
 	avoid an error when the -Werror=unused-variable GCC option is used.
-
-2018-02-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/get_sj.c] Avoid an unused variable.
 
@@ -6143,7 +6133,7 @@
 
 	[src/sub1.c] added 2 FIXME
 
-2018-02-20  Vincent Lefèvre  <vincent@vinc17.net>
+2018-02-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tai.c] Renamed test_near_zero to test_near_m2e, since this is
 	"exercise mpfr_ai near m*2^e", as documented. Corrected comments.
@@ -6497,6 +6487,8 @@
 	[tests/{tset_float128.c,tset_ld.c}] Removed obsolete WITH_FPU_CONTROL
 	related code (this should have been done in r12185).
 
+2018-02-07  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[INSTALL] Updated GMP URL.
 
 	[doc/mpfr.texi] Updated the month.
@@ -6506,8 +6498,6 @@
 
 	[INSTALL] Corrected minimal GMP version (thanks to David Edelsohn).
 	[tools/mpfrlint] Added a test to detect minimal GMP version mismatch.
-
-2018-02-07  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tools/announce-text] For releases, check the VERSION file of the tag.
 
@@ -7024,6 +7014,8 @@
 
 	Updated version to 4.1.0-dev again.
 
+2017-12-17  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Updated version to 4.0.0-rc2 for an attempt to replace the 4.0 branch.
 
 	ChangeLog update with "LC_ALL=en_US.UTF8 TZ=UTC svn log -rHEAD:0 -v".
@@ -7260,9 +7252,9 @@
 	for mpfr_mpz_clear so that the pool will not take too much memory while
 	keeping a possible benefit for very small precision.
 
-	[src/mpfr.h] Made box around code examples for clarity and grep.
-
 2017-12-05  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[src/mpfr.h] Made box around code examples for clarity and grep.
 
 	[doc/mpfr.texi] For mpfr_fpif_export: the sign of a NaN is stored.
 	[tests/tfpif.c] Test the sign of NaN (in particular).
@@ -8009,6 +8001,8 @@
 	  * mpfrlint: updated the invocation of this test, simplifying it to
 	    make it similar to the other ones (it was based on old code).
 
+2017-08-27  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/turandom.c] Disabled the reprod_abi test with GMP < 4.2.0
 	since the hardcoded values would be different.
 
@@ -8238,13 +8232,11 @@
 
 	[mpfr.texi] added example showing how to emulate fixed-point arithmetic
 
-2017-07-18  Vincent Lefèvre  <vincent@vinc17.net>
+2017-07-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/sin_cos.c] Avoid integer overflows with precision 1100000 and
 	the 32-bit ABI (32-bit long), fixing bug reported by Simon Byrne:
 	https://sympa.inria.fr/sympa/arc/mpfr/2017-07/msg00002.html
-
-2017-07-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests] Re-indented some RND_LOOP / RND_LOOP_NO_RNDF blocks.
 
@@ -8260,7 +8252,7 @@
 
 	[tests/tversion.c] Added ABI information & tests.
 
-2017-06-21  Vincent Lefèvre  <vincent@vinc17.net>
+2017-06-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/subnormal.c] Correction in comment (English).
 
@@ -8281,6 +8273,8 @@
 
 	[src/get_str.c] Improved comments (avoid the confusion between a
 	negative base argument and a negative base).
+
+2017-06-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Punctuation.
 
@@ -8337,6 +8331,8 @@
 	    from the TODO because it is not completely supported yet).
 	  * doc/mpfr.texi: added a FIXME about the partial support.
 
+2017-05-31  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/{atanh.c,log1p.c}]
 	  * Replaced mpfr_get_exp by MPFR_GET_EXP (so that the exponent is
 	    checked with --enable-assert).
@@ -8350,7 +8346,7 @@
 
 	added log1p to mbench
 
-2017-05-30  Vincent Lefèvre  <vincent@vinc17.net>
+2017-05-29  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Updated the month.
 
@@ -8359,8 +8355,6 @@
 	[tests] Code simplification and improvement by using SAME_VAL().
 
 	[tests/tbeta.c] Replaced not_same() by the simpler ! SAME_VAL().
-
-2017-05-29  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/sum.c] Code reindentation due to a new test for MPFR_RNDF support,
 	and other minor changes in formatting and comments.
@@ -8775,6 +8769,8 @@
 	[src/vasprintf.c] Comment re-indentation.
 
 	[src/ubf.c] Renamed mpfr_get_zexp to mpfr_init_get_zexp for clarity.
+
+2017-04-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mpfr-impl.h] Fixed silly typo in MPFR_UBF_CLEAR_EXP() yielding
 	either an obscure memory leak or a crash in some mpfr_fmma calls.
@@ -9503,7 +9499,7 @@
 
 	[src/div.c] new variant of mpfr_div2_approx()
 
-2017-01-14  Vincent Lefèvre  <vincent@vinc17.net>
+2017-01-13  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/invert_limb.h] Fit on 80 columns (one line was over the
 	POSIX line-length limit of 2047 characters).
@@ -9511,7 +9507,7 @@
 	[src/invert_limb.h] Correction in __gmpfr_invert_limb for 32-bit ABI:
 	_d was used before being defined.
 
-2017-01-14  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2017-01-13  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	[invert_limb.h] added invert_limb code for 32-bit
 
@@ -9538,11 +9534,9 @@
 	[src/div.c] C90 compatibility (avoid initializer elements not computable
 	at load time).
 
-2017-01-13  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2017-01-12  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	[src/div.c] added some alternate code for mpfr_div2_approx (disabled for now)
-
-2017-01-12  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	fixed bug in urandomb.c reported by Dominic Chen
 	(https://sympa.inria.fr/sympa/arc/mpfr/2017-01/msg00011.html)
@@ -9663,6 +9657,8 @@
 
 	[tests/tmul.c] Added test of mpfr_mul on 1 to 3 limbs. Currently fails.
 
+2017-01-08  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/mul.c] Define aq = MPFR_GET_PREC (a), and use this.
 
 2017-01-08  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
@@ -9694,6 +9690,8 @@
 2017-01-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Merged the latest changes from the trunk.
+
+2017-01-05  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/div.c] Use mpfr_limb_ptr instead of mp_ptr.
 
@@ -10273,9 +10271,9 @@
 	[doc/sum.txt] Added details about the handling of halfway cases, as
 	the rule is not obvious due to two's complement representation.
 
-	[src/sum.c] Cosmetic change for consistency between lbit and rbit.
-
 2016-11-06  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[src/sum.c] Cosmetic change for consistency between lbit and rbit.
 
 	[doc/sum.txt] Minor update.
 
@@ -10760,6 +10758,8 @@
 	[tests/tdiv.c] Added a test triggering an assertion failure with
 	"--enable-assert --enable-gmp-internals".
 
+2016-08-30  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tools/mpfrlint] Update.
 
 	[src/div.c] Untabified. Clarified a comment.
@@ -10821,6 +10821,8 @@
 	[tests/tcan_round.c] Improved a test now that mpfr_can_round is exact.
 
 	[src/mpfr-gmp.h] Added a warning about r10749.
+
+2016-08-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/round_prec.c] Various corrections/improvements:
 	  * Unified the return, making sure that temporary memory is no longer
@@ -10885,18 +10887,16 @@
 	by running this script, the account can easily be compromised due to a
 	libtool bug.
 
-2016-08-07  Vincent Lefèvre  <vincent@vinc17.net>
+2016-08-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mpfr.h] Moved MPFR_DEPRECATED before __MPFR_DECLSPEC for
 	compatibility with MSVC (and documented this requirement).
 	Thanks to Brian Gladman for the information.
 
-2016-08-05  Vincent Lefèvre  <vincent@vinc17.net>
+2016-08-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/README.dev] Added a note about the C++11 compatibility issue
 	with a string literal immediately followed by a macro name.
-
-2016-08-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Fixed remaining macros with missing "do" … "while (0)", detected with
 	mpfrlint. There were no consequences except spurious null statements.
@@ -11372,7 +11372,7 @@
 
 	[src/sub1sp.c] added assertions
 
-2016-07-07  Vincent Lefèvre  <vincent@vinc17.net>
+2016-07-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tadd.c] C++ compatibility.
 
@@ -11502,7 +11502,7 @@
 
 	[src/sub1sp.c] fixed some FIXMEs
 
-2016-07-05  Vincent Lefèvre  <vincent@vinc17.net>
+2016-07-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/sub1sp.c] Added a FIXME.
 
@@ -11592,6 +11592,8 @@
 	Merged the latest changes from the trunk.
 
 	[autogen.sh] Treat autoreconf warnings as errors.
+
+2016-06-24  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/vasprintf.c] Some improvements. In particular, avoid two successive
 	calls to mpfr_cmpabs on the same arguments (the compiler doesn't know
@@ -11813,6 +11815,8 @@
 
 	[tests/tlgamma.c] Corrected updated comment from r10444.
 
+2016-06-06  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tlgamma.c] Updated comment of the test added in r10442.
 
 	[src/uceil_log2.c] Correction in __gmpfr_ceil_log2, avoiding an
@@ -11826,8 +11830,6 @@
 	[tests/tlgamma.c] Added a test causing a "too much memory" error with
 	tcc 0.9.27~git20151227.933c223-1 (there's already one in special(),
 	but this one is a simpler, standalone test).
-
-2016-06-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Merged the latest change from the trunk (r10440).
 
@@ -11924,7 +11926,7 @@
 
 	RNDF: fixed tfactorial
 
-2016-06-03  Vincent Lefèvre  <vincent@vinc17.net>
+2016-06-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	C++ compatibility (corrected).
 
@@ -12068,7 +12070,7 @@
 
 	added libtoolize (needed for AX_PTHREAD)
 
-2016-05-25  Vincent Lefèvre  <vincent@vinc17.net>
+2016-05-24  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tlog_ui.c] Improved a test function.
 
@@ -12165,6 +12167,8 @@
 	[NEWS] New function mpfr_buildopt_sharedcache_p in MPFR 3.2.
 	[doc/mpfr.texi] New function mpfr_buildopt_sharedcache_p. Minor changes.
 
+2016-05-23  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/mpfr-impl.h] About the MPFR_DECL_INIT_CACHE macro:
 	  * Added a FIXME comment about a possible warning due to a missing
 	    field initializer; suggest 2 possible solutions.
@@ -12180,8 +12184,6 @@
 	[src/mpfr-thread.h] Coding style.
 
 	Minor comment & coding style corrections on r10327.
-
-2016-05-23  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added shared cache support (from a patch by Patrick Pélissier).
 
@@ -12240,9 +12242,9 @@
 	    See: https://sympa.inria.fr/sympa/arc/mpfr/2016-01/msg00061.html
 	  * Support _MPFR_EXP_FORMAT == 4 (format used for testing).
 
-	[tests/tfmma.c] Corrections and improvements in random_test.
-
 2016-05-22  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[tests/tfmma.c] Corrections and improvements in random_test.
 
 	[tests/tfmma.c] Replaced mpfr_cmp by the stronger mpfr_equal_p.
 
@@ -12278,6 +12280,8 @@
 	Added MPFR_EXP_IN_RANGE macro, and replaced some tests to use it.
 
 	[src/fma.c] Minor code simplification.
+
+2016-05-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Improved code related to mpfr_set_exp_t:
 	  * Define MPFR_EXP_LIMB_SIZE macro (size of mpfr_exp_t in limbs)
@@ -12371,6 +12375,8 @@
 	[tools/mpfrlint] Fixed bug triggered when the command for err-if-output
 	has empty arguments (this does not occur yet).
 
+2016-04-08  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tversion.c] Output the status of the __GMP_LIBGMP_DLL and
 	MPFR_WIN_THREAD_SAFE_DLL macros (since unreliable consistency checks
 	have been removed in r10260).
@@ -12383,8 +12389,6 @@
 	added in the win-thread-safe-dll branch (r9682, following a problem
 	found in r9680). One alternative for checking by the MPFR developers
 	would be to output the status of some internal macros in tversion.
-
-2016-04-08  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tools/mpfrlint] Use err-if-output also for external checkers.
 
@@ -12463,6 +12467,8 @@
 	[doc/sum.txt] Update about t' in the error analysis.
 
 	[doc/sum.txt] More about the notion of exponent in two's complement.
+
+2016-03-13  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/sum.txt] Update about sum_raw (with a correction of a typo).
 
@@ -13280,7 +13286,7 @@
 
 	added a comment
 
-2016-02-01  Vincent Lefèvre  <vincent@vinc17.net>
+2016-01-31  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/round_p.c] Fixed mpfr_round_p for MPFR_WANT_ASSERT >= 2, as
 	mpfr_round_p accepts non-normalized inputs (as decided in r9897),
@@ -13574,6 +13580,8 @@
 
 	[src/fma.c] Added a comment for the new code.
 
+2016-01-14  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/Makefile.am] Tests in lexicographic order.
 
 2016-01-14  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
@@ -13648,12 +13656,12 @@
 	under zsh (the m4 and tools/mbench directories were not modified).
 	Removed 2015 from the example in the doc/README.dev file.
 
-2015-12-29  Vincent Lefèvre  <vincent@vinc17.net>
+2015-12-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mpfr-impl.h] Fixed MPFR_WIN_THREAD_SAFE_DLL definition
 	(patch by Patrick Pélissier).
 
-2015-12-28  Vincent Lefèvre  <vincent@vinc17.net>
+2015-12-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/mpf_compat.h] Fix: File "inp_str.dat" could not be opened with
 	builds outside the source directory (objdir different from srcdir).
@@ -13661,8 +13669,6 @@
 	Now that mpfr-test.h is included via the mpf_compat.c or mpfr_compat.c
 	file (there does not seem to be a valid reason not to include it), we
 	can use src_fopen to open the file in all cases.
-
-2015-12-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests] In tversion.c, output the locale too (if supported).
 
@@ -13793,11 +13799,9 @@
 	[src/sum.c] Added a FIXME comment about the reuse of an input for the
 	output.
 
-2015-11-07  Vincent Lefèvre  <vincent@vinc17.net>
+2015-11-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	GMP 5.0.0 or newer is required (instead of 4.2.0).
-
-2015-11-06  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/sum.txt] Major and final update (complete rewrite).
 
@@ -13978,11 +13982,9 @@
 
 	fixed failed assertion during "make tune"
 
-2015-08-26  Vincent Lefèvre  <vincent@vinc17.net>
+2015-08-25  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tget_z.c] Flags testing.
-
-2015-08-25  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/README.dev] Updated a URL.
 
@@ -14057,11 +14059,9 @@
 
 	[src/next.c] Added a note concerning the exceptions.
 
-2015-07-21  Vincent Lefèvre  <vincent@vinc17.net>
+2015-07-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Updated the month.
-
-2015-07-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tversion.c] Output MPFR_VERSION_STRING too.
 
@@ -14143,7 +14143,7 @@
 
 	[src/check.c] Typo in a comment.
 
-2015-06-20  Vincent Lefèvre  <vincent@vinc17.net>
+2015-06-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tools/announce-text] Update due to recent InriaForge upgrade.
 
@@ -14182,6 +14182,8 @@
 	[tests/tfma.c] The code removed in r9560 was actually necessary,
 	but do this in a better way.
 
+2015-06-11  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tfma.c] Added other underflow tests.
 
 	[tests/tfma.c] Some improvements.
@@ -14190,14 +14192,12 @@
 
 	[tests/tfma.c] Removed code that isn't necessary.
 
-2015-06-11  Vincent Lefèvre  <vincent@vinc17.net>
-
 	[doc/README.dev] "To make a release": mention -DMPFR_COV_CHECK and
 	-DMPFR_ALLOCA_MAX=0 tests.
 
-	[tests/trandom.c] Cleaner test, avoiding the explicit use of mpfr_rands.
-
 2015-06-10  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[tests/trandom.c] Cleaner test, avoiding the explicit use of mpfr_rands.
 
 	[tests/trandom.c] Improved latest change, as some other test already
 	assume a fixed PRNG with GMP >= 4.2.0 (now the value of the last
@@ -14255,12 +14255,12 @@
 
 	[src/add_ui.c] Fixed format string in MPFR_LOG_FUNC.
 
+2015-06-07  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tests/tzeta_ui.c] Code simplification.
 
 	[tests/tzeta_ui.c] Test zeta(0) in reduced exponent range and all
 	rounding modes.
-
-2015-06-07  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/zeta_ui.c] Fixed zeta(0) in reduced exponent range.
 	[tests/tzeta_ui.c] Added testcase.
@@ -14407,7 +14407,7 @@
 	[tests/talloc.c] Avoid a failure with --with-gmp-build due to the fact
 	that the MPFR_ALLOCA_MAX macro is not defined in this case.
 
-2015-05-24  Vincent Lefèvre  <vincent@vinc17.net>
+2015-05-23  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added libtool-tcc-rpath.patch from
 	  https://lists.gnu.org/archive/html/libtool-patches/2015-05/msg00000.html
@@ -14574,9 +14574,9 @@
 	  * tests/tsum.c: many new tests, some of them specifically written
 	    for the new algorithm and implementation.
 
-	[src/sum.c] Fixed bug: mpn functions do not accept a zero size argument.
-
 2015-04-09  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[src/sum.c] Fixed bug: mpn functions do not accept a zero size argument.
 
 	[tests/tsum.c] Replaced a mpfr_inits by a mpfr_inits2.
 
@@ -15100,11 +15100,11 @@
 
 	[src/sum.*] Update (Step 7).
 
+2014-08-21  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/sum.txt] Updated Note 2 again.
 
 	[src/sum.txt] Updated Note 2.
-
-2014-08-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/sum.*] Various corrections, and update.
 
@@ -15210,7 +15210,7 @@
 	    via mpfr-test.h (see above change); added tests_start_mpfr and
 	    tests_end_mpfr (showing memory inconsistency with mpf_compat).
 
-2014-07-21  Vincent Lefèvre  <vincent@vinc17.net>
+2014-07-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/get_str.c] Coding style: better code for a boolean.
 
@@ -15376,6 +15376,8 @@
 	[tests/tdiv.c] Added mpfr_div tests on extreme values. This detects
 	2 problems (at least on a 64-bit machine): a result is not a valid
 	MPFR number (mpfr_check fails) and the flags are incorrect.
+
+2014-06-25  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tsprintf.c] Fixed test added in r9099 (the problem was unrelated
 	to the bug in vasprintf.c).
@@ -15576,13 +15578,11 @@
 	http://ex-cs.sist.ac.jp/~tkouya/try_mpfr.html but everything
 	is OK in r9038.
 
-2014-04-16  Vincent Lefèvre  <vincent@vinc17.net>
-
-	[doc/README.dev] Update about patches and autotools files.
-
-	[doc/README.dev] Update about patches and autotools files.
-
 2014-04-15  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[doc/README.dev] Update about patches and autotools files.
+
+	[doc/README.dev] Update about patches and autotools files.
 
 	[tests/tsum.c] Changed initialization in check_extreme(), which wasn't
 	supported by ISO C90.
@@ -15707,6 +15707,8 @@
 
 	[src/lngamma.c] Temporarily disabled fast argument reconstruction
 	because it doesn't compile with g++.
+
+2014-03-01  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Removed trailing spaces.
 
@@ -16019,7 +16021,7 @@
 
 	tiny change to distinguish different versions of the manual
 
-2014-01-30  Vincent Lefèvre  <vincent@vinc17.net>
+2014-01-29  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src] Add constants:
 	  * __gmpfr_mone = -1
@@ -16405,15 +16407,13 @@
 
 	added new test that currently fails (found with mini-gmp)
 
-2014-01-19  Vincent Lefèvre  <vincent@vinc17.net>
+2014-01-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Spelling consistency:
 	  non-negative → nonnegative
 	  non-positive → nonpositive
 
 	[doc/README.dev] More on exponent handling.
-
-2014-01-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_str.c] Fixed and improved a mpfr_set_str_binary random test.
 	Some code clean-up.
@@ -16473,11 +16473,13 @@
 
 	[tests/{ty0,ty1}.c] Reduce emax for the generic tests.
 
+2014-01-17  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/lngamma.c] FIXME: proposed method for overflow detection.
 
 	[src/lngamma.c] Minor improvements.
 
-2014-01-18  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2014-01-17  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	missing \n
 
@@ -16487,13 +16489,11 @@
 
 	missing \n in error messages
 
-2014-01-18  Vincent Lefèvre  <vincent@vinc17.net>
+2014-01-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/lngamma.c] Added a MPFR_LOG_FUNC.
 
 	[src/digamma.c] FIXME: for x large, use the asymptotic expansion.
-
-2014-01-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/digamma.c] Added 2 MPFR_LOG_FUNC's.
 
@@ -16568,6 +16568,8 @@
 	[NEWS] Mention speed improvement with --enable-assert[=full] and GCC
 	(due to the fix in r8746).
 
+2014-01-14  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/mpfr-impl.h] Fixed the MPFR_ASSERTN macro as suggested by
 	Wolf Lammen: https://sympa.inria.fr/sympa/arc/mpfr/2014-01/msg00002.html
 	Note: the semantics doesn't change, it should just be more efficient.
@@ -16575,6 +16577,8 @@
 2014-01-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_ld.c] Output MPFR_LDBL_MANT_DIG in some failure case.
+
+2014-01-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_d.c] More information in a failed test.
 
@@ -16775,12 +16779,12 @@
 	[NEWS] For MPFR 3.2: The --enable-decimal-float configure option
 	no longer requires --with-gmp-build (see r8402).
 
+2013-09-15  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[configure.ac] Detect broken _Decimal64 support on powerpc64 with
 	the mode32 ABI.
 
 	[tests/tget_set_d64.c] More meaningful messages in check_inf_nan.
-
-2013-09-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tget_set_d64.c] More meaningful messages in check_inf_nan
 	after failures on powerpc64 with the mode32 ABI.
@@ -16886,6 +16890,8 @@
 	  "long double" format seems to be double-double (e.g. on PowerPC).
 	[src/get_ld.c] Added double-double support.
 
+2013-08-05  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/get_ld.c] GNU style.
 
 	[tests/tset_ld.c] Improved output in case of error.
@@ -16895,8 +16901,6 @@
 	is now determined dynamically from the long double d. Thus some numbers
 	having a precision > MPFR_LDBL_MANT_DIG in double-double arithmetic are
 	now tested (e.g. on PowerPC).
-
-2013-08-05  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] "correctly-rounded" → "correctly rounded" (see rule on
 	https://en.wikipedia.org/wiki/Wikipedia:HYPHEN#Hyphens and the IEEE 754
@@ -16922,7 +16926,7 @@
 		    representation where MPFR_LDBL_MANT_DIG=106 and numbers
 		    with 107 bits or more
 
-2013-08-03  Vincent Lefèvre  <vincent@vinc17.net>
+2013-08-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/mpfr.texi] Document that log1p(-1) = -Inf.
 
@@ -16930,8 +16934,6 @@
 
 	[doc/mpfr.texi] Moved mpfr_log1p & mpfr_expm1 after mpfr_log & mpfr_exp
 	respectively.
-
-2013-08-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_ld.c] Comment on LDBL_MAX.
 
@@ -17096,9 +17098,9 @@
 	[doc/algorithms.tex] Slightly improved a bound under which mpfr_hypot
 	cannot have an internal underflow, thus is correct.
 
-	[tools/mpfrlint] Improved a test to avoid false positives.
-
 2013-06-06  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[tools/mpfrlint] Improved a test to avoid false positives.
 
 	[doc/algorithms.tex] Updated/improved the proof of mpfr_hypot in the
 	scaling case.
@@ -17280,7 +17282,7 @@
 
 	fixed typo
 
-2013-05-16  Vincent Lefèvre  <vincent@vinc17.net>
+2013-05-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[Makefile.am] Added a comment about ACLOCAL_AMFLAGS, based on the
 	GNU Automake 1.13.2 release notes.
@@ -17417,6 +17419,8 @@
 	[src/fpif.c] Added a FIXME comment in mpfr_fpif_import concerning the
 	precision.
 
+2012-12-11  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/fpif.c] Added comments. Fixed mpfr_fpif_read_precision_from_file
 	in the case where the precision size > sizeof(mpfr_prec_t) and/or when
 	the read precision is too large (as mpfr_prec_t is signed).
@@ -17449,7 +17453,7 @@
 	[doc/mpfr.texi] Updated warning in mpfr_min_prec description,
 	in particular for the use with mpfr_prec_round.
 
-2012-10-18  Vincent Lefèvre  <vincent@vinc17.net>
+2012-10-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/set_uj.c] Change to help the compiler to detect dead code,
 	improving the coverage (from a patch by Patrick Pélissier).
@@ -17469,7 +17473,7 @@
 	[tests/tsprintf.c] Do the locale_da_DK test only if MPFR_LCONV_DPTS is
 	  true.
 
-2012-09-30  Vincent Lefèvre  <vincent@vinc17.net>
+2012-09-29  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[doc/README.dev] Note about GNU extensions and ICC.
 
@@ -17599,6 +17603,8 @@
 	  values x such that 0.5e-398 < |x| < 1e-398 (smallest subnormal):
 	  it was returning 0 instead of +/- 1e-398 (see r8370).
 	[tests/tget_set_d64.c] Added testcases.
+
+2012-08-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/get_d64.c] Fixed get_decimal64_max by simplifying it completely,
 	and changed get_decimal64_min in the same way.
@@ -17774,7 +17780,7 @@
 
 	[tabort_defalloc2.c] changed char* into void* to please g++ compiler
 
-2012-07-05  Vincent Lefèvre  <vincent@vinc17.net>
+2012-07-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/trndna.c] Removed useless initialization.
 
@@ -17883,6 +17889,8 @@
 
 	[tools/coverage] Detailed coverage (from a patch by Patrick).
 
+2012-06-26  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/{mpfr-impl.h,print_raw.c}] Removed unused function mpfr_dump_mant
 	(added in r3410, but never used); patch by Patrick.
 
@@ -17894,8 +17902,6 @@
 	assertion (this is based on a patch by Patrick).
 
 	[src/digamma.c] Correction: assertions must never have any side effect.
-
-2012-06-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests] Updated svn:ignore property.
 
@@ -18017,7 +18023,7 @@
 
 	[li2.c] replaced mpfr_cmp_d by mpfr_cmp_ui_2exp
 
-2012-06-22  Vincent Lefèvre  <vincent@vinc17.net>
+2012-06-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_ld.c] For _GMP_IEEE_FLOATS, use #if instead of #ifdef
 	since mpfr-impl.h defines it to 0 if it was undefined.
@@ -18589,7 +18595,7 @@
 
 	[configure.ac] Added a comment mentioning a problem with GNU gold ld.
 
-2012-02-16  Vincent Lefèvre  <vincent@vinc17.net>
+2012-02-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[TODO] Added reference to ISO/IEC 24747:2009 (C, special functions).
 
@@ -18755,7 +18761,7 @@
 			  currently recognize Core i5 as "k8", however the k8 tuning
 			  parameters are not so bad for Core i5)
 
-2011-10-06  Vincent Lefèvre  <vincent@vinc17.net>
+2011-10-05  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/mpfr-impl.h] Improved MPFR_IS_PURE_FP definition, so that
 	MPFR_ASSERTD takes a boolean (0 or 1).
@@ -19128,7 +19134,7 @@
 	[src/get_str.c] Added a comment about the use of mpfr_ceil_mul
 	(exported and declared in mpfr-impl.h since r7760).
 
-2011-07-29  Philippe Théveny  <philippe.theveny@laposte.net>
+2011-07-28  Philippe Théveny  <philippe.theveny@laposte.net>
 
 	Avoid expensive calls to mpfr_get_prec() using mpfr_ceil_mul() instead.
 
@@ -19217,7 +19223,7 @@
 	and in doc/README.dev, explained why svn:eol-style native should not
 	be used.
 
-2011-06-29  Vincent Lefèvre  <vincent@vinc17.net>
+2011-06-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tools/ck-version-info] Check DLL version in LIBMPFR_LDFLAGS line from
 	configure.ac (patch by Stefan Graff, with minor changes).
@@ -19397,7 +19403,7 @@
 
 	[README.dev] added hint for logging
 
-2011-05-05  Vincent Lefèvre  <vincent@vinc17.net>
+2011-05-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/atan.c] Fixed bug in mpfr_atan: mpfr_check_range was called on the
 	unrounded result (no longer allocated) instead of the rounded result.
@@ -19733,6 +19739,8 @@
 
 	[tests/trint.c] Do not use snprintf (C99).
 
+2011-03-04  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[tools/mpfrlint] Added a test to check that the snprintf function (C99)
 	is not used.
 
@@ -19844,7 +19852,7 @@
 
 	[tests/tmul_2exp.c] Small correction in output (in case of failure).
 
-2011-02-22  Vincent Lefèvre  <vincent@vinc17.net>
+2011-02-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tset_q.c] Corrections in function prototypes.
 
@@ -20345,6 +20353,8 @@
 	Added configure.lineno (generated by configure) to the svn:ignore
 	property of the src directory.
 
+2010-12-12  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[NEWS] Update concerning the --with-gmp-build configure option.
 
 	[INSTALL] Corrected a typo from r7293.
@@ -20354,8 +20364,6 @@
 
 	[configure.ac] With --with-gmp-build, do not duplicate the include
 	search paths if the GMP source and build directories are the same.
-
-2010-12-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[configure.ac] Fixed another bug in r7289. This new version now seems
 	to work with GMP's srcdir pointing to a relative directory or to an
@@ -20424,6 +20432,8 @@
 
 	[src/min_prec.c] Replaced x->_mpfr_d by MPFR_MANT(x).
 
+2010-11-18  Vincent Lefèvre  <vincent@vinc17.net>
+
 	[src/mpfr-impl.h] Commented out the declaration of mpfr_round_raw_3
 	(since this function is no longer defined).
 
@@ -20442,11 +20452,9 @@
 
 	[tools/nightly-test] Added a comment about the use of -pedantic-errors.
 
-2010-11-11  Vincent Lefèvre  <vincent@vinc17.net>
+2010-11-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[src/sub1.c] Minor simplification.
-
-2010-11-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tpow.c] Avoid warnings if mpfr_exp_t < long.
 
@@ -20589,7 +20597,7 @@
 	[tuneup.c] increase maximal number of calls to speed_measure from 5 to 30
 		   (seems to solve problems on gcc15)
 
-2010-10-19  Vincent Lefèvre  <vincent@vinc17.net>
+2010-10-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[tests/tcan_round.c] Removed an incorrect cast, fixing a bug (in the
 	test) that was producing a failure for GMP_CHECK_RANDOMIZE=1287710095
@@ -20729,7 +20737,7 @@
 
 	[doc/README.dev] added comment about mpn_rootrem
 
-2010-09-29  Vincent Lefèvre  <vincent@vinc17.net>
+2010-09-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[configure.ac] Added a FIXME note about incorrect use of an internal
 	GMP symbol (__gmpn_rootrem).
@@ -21128,7 +21136,7 @@
 
 	gmp_op.c: Fix ternary value returned by mpfr_mul_q and mpfr_div_q in overflow cases.
 
-2010-08-05  Vincent Lefèvre  <vincent@vinc17.net>
+2010-08-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	README.dev: updated "To make a release" (test of FP division by 0).
 
@@ -21144,8 +21152,6 @@
 	    tests involving NaN and infinities.
 
 	[README.dev] Update about the compilers.
-
-2010-08-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[README.dev] Mention clang.
 
@@ -21256,7 +21262,7 @@
 
 	[tget_flt.c] print more information in case a test fails
 
-2010-07-10  Vincent Lefèvre  <vincent@vinc17.net>
+2010-07-09  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[gamma.c] Added an assert concerning the mpfr_exp_t size.
 
@@ -21491,7 +21497,7 @@
 
 	[NEWS] Added test coverage for MPFR 3.0.0.
 
-2010-06-01  Vincent Lefèvre  <vincent@vinc17.net>
+2010-05-31  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[INSTALL] Added missing blank lines (consistency).
 
@@ -21612,7 +21618,7 @@
 	were in a MPFR_ASSERTD, the failure could occur only when assertion
 	checking had been enabled.
 
-2010-05-23  Vincent Lefèvre  <vincent@vinc17.net>
+2010-05-22  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[README.dev] Removed trailing spaces.
 
@@ -21624,8 +21630,6 @@
 	defined and used internally instead of UINTMAX_MAX, INTMAX_MAX and
 	INTMAX_MIN. If these C99 macros work, then the MPFR_* macros use them,
 	otherwise MPFR uses its own definitions.
-
-2010-05-22  Vincent Lefèvre  <vincent@vinc17.net>
 
 	mpfr_div_ui8 and mpfr_mul_ui5 didn't have to be exported.
 
@@ -21673,7 +21677,7 @@
 		    There are some issues left that I don't know how to solve,
 		    they are marked with @c PZ in mpfr.texi.
 
-2010-05-20  Vincent Lefèvre  <vincent@vinc17.net>
+2010-05-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[mpfr.texi, NEWS] Noted that the mpfr_ai implementation is incomplete
 	and experimental.
@@ -21681,8 +21685,6 @@
 	[ai.c] Use MPFR_IS_SINGULAR. Added a FIXME comment for Ai(0).
 
 	Type corrections for C++ compilers (in particular, mpfr_rnd_t vs int).
-
-2010-05-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[ai.c] Fixed possible problem in reduced exponent range.
 
@@ -22208,6 +22210,8 @@
 
 	README.dev: added a note about patches and the autotools.
 
+2010-01-10  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Added mpfrlint test for the required autoconf versions (see r6649).
 
 2010-01-10  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
@@ -22392,6 +22396,8 @@
 
 	README.dev: last things to do when making a release.
 
+2009-11-22  Vincent Lefèvre  <vincent@vinc17.net>
+
 	sin_cos.c: fixed a potential bug by changing a rnd_mode into MPFR_RNDZ
 	in mpfr_can_round. Indeed, in r4574, the change from
 	  if (!mpfr_can_round (c, m, GMP_RNDZ, rnd_mode, MPFR_PREC (z)))
@@ -22402,8 +22408,6 @@
 	changes a RNDN worst case into a RNDZ worst case.
 	Note: The second mpfr_can_round with the same problem has been fixed
 	in r6513.
-
-2009-11-22  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tsin_cos.c: ported bug20091122 from the 2.4 branch to the trunk.
 	But no failure in the trunk.
@@ -22538,11 +22542,9 @@
 
 	[tests/Makefile.am] removed LOADLIBES=...
 
-2009-09-21  Vincent Lefèvre  <vincent@vinc17.net>
+2009-09-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	mpfrlint: check that lines aren't too long.
-
-2009-09-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Makefile.am: line-wrap libmpfr_la_SOURCES (M-q with Emacs) for
 	compatibility with some vendor grep.
@@ -22703,7 +22705,7 @@
 	[iszero.c] fixed typo in comment
 	[tests/tisnan.c] added tests for mpfr_regular_p
 
-2009-09-12  Vincent Lefèvre  <vincent@vinc17.net>
+2009-09-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	vasprintf.c: changeset r6414 was incorrect, in particular under Linux
 	(at least some platforms), where wint_t is an unsigned int, not an int.
@@ -22734,7 +22736,7 @@
 
 	[TODO] removed psi(=digamma)
 
-2009-09-03  Vincent Lefèvre  <vincent@vinc17.net>
+2009-09-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/data/digamma: for the special values, use the new mode '*'
 	(exact cases) instead of 'n'.
@@ -22743,8 +22745,6 @@
 	all the rounding modes and check the ternary value).
 
 	towards -> toward (consistency).
-
-2009-09-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests: added tdigamma to svn:ignore property.
 
@@ -22780,7 +22780,7 @@
 	(Didn't replace mpn_divrem by mpn_tdiv_qr since the parameters differ, and also
 	for efficiency reasons.)
 
-2009-08-27  Vincent Lefèvre  <vincent@vinc17.net>
+2009-08-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tsprintf.c: fixed locale_da_DK test.
 
@@ -23069,11 +23069,9 @@
 	whether -ffloat-store is needed or not (which is the goal of this
 	test).
 
-2009-06-10  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2009-06-09  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	[acinclude.m4] patch from Maciej W. Rozycki on mpfr mailing-list, 9 Jun 2009
-
-2009-06-09  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	added more test cases for the Bessel functions (from John Harrison paper at
 	Arith19)
@@ -23170,6 +23168,8 @@
 
 	fms.c: improve the performance of memory allocations in small precision
 	(almost identical to changeset 6195 for fma.c).
+
+2009-05-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	fma.c: patch by Patrick Pélissier to improve the performance of
 	memory allocations in small precision.
@@ -23543,6 +23543,8 @@
 	(since MPFR 3.0 hasn't been released yet, the FAQ still uses the 2.x
 	API).
 
+2009-03-05  Vincent Lefèvre  <vincent@vinc17.net>
+
 	tests/tadd.c: completed the code coverage (case bk == 0 in add1.c).
 
 2009-03-05  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
@@ -23616,7 +23618,7 @@
 
 	[add.c] added comment for 0 + 0 with round away
 
-2009-02-27  Vincent Lefèvre  <vincent@vinc17.net>
+2009-02-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/texceptions.c: removed obsolete comments from r2427.
 
@@ -23898,6 +23900,8 @@
 
 	vasprintf.c: deleted trailing spaces.
 
+2009-01-19  Vincent Lefèvre  <vincent@vinc17.net>
+
 	mpfr-impl.h: comment for DOUBLE_ISNAN with MPFR_NANISNAN defined.
 
 	tests/tset_d.c: fixed test of mpfr_set_d on -0 with gcc -ffast-math
@@ -23907,8 +23911,6 @@
 	(at least on x86_64); fixed that by adding another test.
 	tests/tset_ld.c: Isnan_ld wasn't working either; also the NaN test was
 	incorrect. Now, the failure on NaN is correctly reported.
-
-2009-01-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tcmp_d.c, tests/tcmp_ld.c, tests/tset_d.c: corrected message.
 
@@ -24026,6 +24028,8 @@
 
 	tests/tcmp2.c: fixed printf format strings.
 
+2009-01-13  Vincent Lefèvre  <vincent@vinc17.net>
+
 	tests/tset_str.c: fixed printf format string.
 
 2009-01-12  Vincent Lefèvre  <vincent@vinc17.net>
@@ -24126,11 +24130,9 @@
 	tfprintf.c: more user-friendly messages.
 	tprintf.c: more user-friendly messages. Warning: because stdout might be redirected, error messages are printed to stderr.
 
-2008-12-16  Vincent Lefèvre  <vincent@vinc17.net>
+2008-12-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	mpfr.texi: more explanations on the precision field for mpfr_printf.
-
-2008-12-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	untabify and remove trailing spaces
 
@@ -24599,6 +24601,8 @@
 	from signed into unsigned, and maybe problems on some platforms. This
 	doesn't fix the current freeze of tli2 on 64-bit machines, though.
 
+2008-08-24  Vincent Lefèvre  <vincent@vinc17.net>
+
 	tests/tgeneric.c: changed the way a warning with gcc 4.2+ is avoided
 	(r5335), as suggested by Manuel López-Ibáñez on GCC bug 36299.
 
@@ -24636,11 +24640,11 @@
 	algorithms.tex: corrected English usage, spelling and typography
 	in the section on mpfr_hypot.
 
+2008-08-20  Vincent Lefèvre  <vincent@vinc17.net>
+
 	tests/thypot.c: added a test for tiny x and y (already done by the
 	generic tests, but not yet in the 2.3 branch in extended exponent
 	range).
-
-2008-08-20  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tgeneric.c: for the special cases tested in precision p1
 	for n <= 3, set the extended exponent range.
@@ -24710,6 +24714,8 @@
 
 	tests/tpow_all.c: in overflow_inv, reduced t to [0,5] and added tests.
 
+2008-08-19  Vincent Lefèvre  <vincent@vinc17.net>
+
 	tests/tpow_all.c: improved error messages.
 
 	tests/tpow_all.c: changed the precisions in overflow_inv for clearer
@@ -24721,9 +24727,9 @@
 
 	tests/tpow_all.c: added overflow tests for x^(-1). -> Failure.
 
-2008-08-19  Vincent Lefèvre  <vincent@vinc17.net>
-
 	Fixed basic underflow checking in mpfr_pow.
+
+2008-08-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	mpfr-impl.h: defined macro INITIALIZED to declare that some variable
 	  is initialized before being used.
@@ -24735,6 +24741,8 @@
 	pow.c: updated comments.
 
 	tests/tpow_all.c: added tests -> assertion failed in pow.c line 603.
+
+2008-08-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tpow_all.c: added test of mpfr_ui_div.
 
@@ -24757,7 +24765,7 @@
 	exp_2.c: fixed a log message (the format didn't correspond to the types)
 	and improved it.
 
-2008-08-13  Vincent Lefèvre  <vincent@vinc17.net>
+2008-08-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tdiv.c: completed underflow test by testing negative results too.
 
@@ -24766,8 +24774,6 @@
 	range is 2^(emin - 2).
 	tests/tmul_2exp.c: test x = 15/16 too. Now tmul_2exp no longer fails
 	(with the correction in div.c from r5515).
-
-2008-08-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tdiv.c correction: the underflow bug was in case when the
 	result had to be zero.
@@ -25015,7 +25021,7 @@
 	(future undocumented feature for GMP 4.2.3) -> we need to check
 	those are the names chosen by GMP 4.2.3 when it will be out
 
-2008-07-22  Vincent Lefèvre  <vincent@vinc17.net>
+2008-07-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	pow.c: fixed incorrect rounding in the general case when the result
 	is negative and rnd = GMP_RNDD or GMP_RNDU (bug20080721 in tpow.c).
@@ -25023,8 +25029,6 @@
 	tests/tpow.c: completed test bug20080721.
 
 	pow.c: fixed the non-trivial cases with large integer y.
-
-2008-07-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tests/tpow.c: added comment for bug20080721.
 
@@ -25035,9 +25039,9 @@
 	tests/tpow_all.c: made the comparisons between the power functions
 	generic to be able to add other tests.
 
-	pow_z.c: use MPFR_IS_POS(x) instead of MPFR_SIGN(x) > 0.
-
 2008-07-20  Vincent Lefèvre  <vincent@vinc17.net>
+
+	pow_z.c: use MPFR_IS_POS(x) instead of MPFR_SIGN(x) > 0.
 
 	pow_si.c: corrected a comment.
 
@@ -25097,7 +25101,7 @@
 	TODO: added "replace the *_THRESHOLD macros by global (TLS) variables
 	that can be changed at run time [...]".
 
-2008-06-17  Vincent Lefèvre  <vincent@vinc17.net>
+2008-06-16  Vincent Lefèvre  <vincent@vinc17.net>
 
 	INSTALL: updated GMP's URL (the old one no longer worked), using
 	http://www.gnu.org/software/gmp/ as suggested by Karl Berry (see
@@ -26120,12 +26124,10 @@
 
 	short documentation of printf-like functions.
 
-2007-12-13  Vincent Lefèvre  <vincent@vinc17.net>
+2007-12-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	README.dev: added information about my tool "eet" to be able to see the
 	warnings more easily.
-
-2007-12-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	vasprintf.c: updated comment concerning the case nbchar > INT_MAX.
 
@@ -26836,7 +26838,7 @@
 
 	tests.c: improved tests_default_random().
 
-2007-09-03  Vincent Lefèvre  <vincent@vinc17.net>
+2007-09-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Makefile.am: fixed get_patches rule.
 
@@ -26965,7 +26967,7 @@
 	* Documented these three functions.
 	* Updated TODO.
 
-2007-08-12  Vincent Lefèvre  <vincent@vinc17.net>
+2007-08-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Fixed mpfr_inits and mpfr_clears calls in tests/tatan.c.
 
@@ -27023,7 +27025,7 @@
 	tests/tests.c: in data_check(), mode 'Z', do not test GMP_RNDN if
 	the precision for the directed rounding modes is MPFR_PREC_MIN.
 
-2007-08-05  Vincent Lefèvre  <vincent@vinc17.net>
+2007-08-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	TODO: more on mpfr_sin (and mpfr_cos).
 
@@ -27078,9 +27080,9 @@
 	      const __mpfr_struct __gmpfr_l2b[BASE_MAX-1][2] = { { { 0 } } };
 	    Removed the code (in ceil_mul) that computed these constants.
 
-	mpfr.texi: updated the documentation of the mpfr_get_d function family.
-
 2007-07-30  Vincent Lefèvre  <vincent@vinc17.net>
+
+	mpfr.texi: updated the documentation of the mpfr_get_d function family.
 
 	Patch tracking: updated README.dev and TODO files.
 
@@ -27099,11 +27101,9 @@
 
 	added files that are not 100% covered by tests
 
-2007-07-28  Vincent Lefèvre  <vincent@vinc17.net>
+2007-07-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	coverage: added --disable-shared --enable-static to configure.
-
-2007-07-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	mpfr-impl.h: added more casts for g++.
 
@@ -27243,7 +27243,7 @@
 
 	added test for inexact flag (bug fixed in r4630)
 
-2007-07-19  Vincent Lefèvre  <vincent@vinc17.net>
+2007-07-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	erfc.c, atan2.c: added missing "MPFR_SAVE_EXPO_FREE (expo);" before
 	  "return mpfr_underflow (...);".
@@ -27317,7 +27317,7 @@
 
 	updated algorithms.tex with new additive argument reduction for sin/cos/tan
 
-2007-07-04  Vincent Lefèvre  <vincent@vinc17.net>
+2007-07-03  Vincent Lefèvre  <vincent@vinc17.net>
 
 	lngamma.c: reformat and replaced mpfr_cmp(...) == 0 by mpfr_equal_p.
 
@@ -27343,13 +27343,13 @@
 
 	README.dev: explain how to test the library interface compatibility.
 
+2007-07-02  Vincent Lefèvre  <vincent@vinc17.net>
+
 	README.dev: mentions patch-libtool and how to apply it.
 
 	Added patch-libtool (patch for aclocal.m4 and configure that comes from
 	<https://lists.gnu.org/archive/html/bug-libtool/2007-07/msg00007.html>
 	or gmane.comp.gnu.libtool.bugs:5776).
-
-2007-07-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	NEWS: mention that the shared library is now enabled by default on 2.3.
 
@@ -27363,6 +27363,8 @@
 
 	NEWS: update.
 
+2007-07-01  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Makefile.am: updated comment concerning -version-info.
 
 	Added mpfr_fms based on mpfr_fma.
@@ -27374,8 +27376,6 @@
 	Reformat.
 
 	fma.c: minor changes for consistency with the future fms.
-
-2007-07-01  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Completed the implementation of mpfr_fma (except in some corner cases
 	where overflows/underflows and huge precisions are involved at the
@@ -27393,12 +27393,12 @@
 
 	NEWS: update.
 
+2007-06-29  Vincent Lefèvre  <vincent@vinc17.net>
+
 	BUGS: updated item on mpfr_fma.
 
 	fma.c: completed the cases where x*y/4 needs to be used, except the very
 	particular cases where an underflow occurs, that remain to be done.
-
-2007-06-29  Vincent Lefèvre  <vincent@vinc17.net>
 
 	tfma.c: fixed a printf.
 
@@ -27416,6 +27416,8 @@
 	tfma.c: added tests (-> assertion failed because mpfr_fma implementation
 	isn't complete).
 
+2007-06-28  Vincent Lefèvre  <vincent@vinc17.net>
+
 	acos.c: disabled change from r3145 ("Optimize mpfr_acos by choosing
 	a better initial precision.") that was buggy.
 	BUGS: removed mpfr_acos bug.
@@ -27429,8 +27431,6 @@
 	acos.c: fixed integer overflows; to avoid undefined behavior, I had
 	to add an assertion that is not always satisfied (the code needs to
 	be rewritten to take tiny arguments into account).
-
-2007-06-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	BUGS: update (mpfr_cot has just been fixed).
 
@@ -27477,10 +27477,10 @@
 	* sec.c: a rounding mode was incorrect.
 	* tests/tsec.c: added overflowed_sec0 test.
 
+2007-06-21  Vincent Lefèvre  <vincent@vinc17.net>
+
 	sin_cos.c: fixed a bug for x = 0 in reduced exponent range.
 	tests/tsin_cos.c: added overflowed_sin_cos0 test.
-
-2007-06-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	BUGS: Some functions do not use MPFR_SAVE_EXPO_* macros, thus do not
 	behave correctly in a reduced exponent range.
@@ -27658,9 +27658,11 @@
 
 	mpfr.texi: corrections following the remarks by Nathalie Revol.
 
+2007-05-29  Vincent Lefèvre  <vincent@vinc17.net>
+
 	yn.c: untabify.
 
-2007-05-30  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2007-05-29  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	fix for small inputs in y1
 
@@ -27704,7 +27706,7 @@
 		usage
 	implemented
 
-2007-05-29  Vincent Lefèvre  <vincent@vinc17.net>
+2007-05-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	MPFR_RET (mpfr_check_range (...)) -> return mpfr_check_range (...)
 	as mpfr_check_range already handles the inexact flag.
@@ -27793,9 +27795,9 @@
 	new version of mpfr_remainder, using Vincent's algorithm
 	(still remains to deal with special arguments, and make mpfr_remquo call it)
 
-	added note about fms
-
 2007-05-23  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+
+	added note about fms
 
 	fixed typo
 
@@ -27833,7 +27835,7 @@
 
 	tfma.c: added tests on special and exact values.
 
-2007-05-18  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2007-05-17  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	fixed error analysis in mpfr_lngamma
 	added mpfr_inp_raw/mpfr_out_raw in TODO
@@ -28107,7 +28109,7 @@
 
 	added new item
 
-2007-02-16  Vincent Lefèvre  <vincent@vinc17.net>
+2007-02-15  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added update-patchv script to update some files before a patch is built
 	(script from 2.2 branch).
@@ -28209,6 +28211,8 @@
 	Replaced some computations using the type double by computations using
 	MPFR, for mpfr_get_str, allowing it to work with an x86 processor set
 	up in single-precision mode.
+
+2007-01-16  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Updated comment concerning LONG_MIN / 1.
 
@@ -28787,12 +28791,12 @@
 	Fixed bug in mpfr_exp2 when the argument is an integer and emin > 1.
 	Added a testcase to texp2.
 
+2006-08-14  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Added tget_ld_2exp to svn:ignore property of "tests" directory
 	(should have been done in rev 4028).
 
 	Fixed bug in log1p for small negative values of x and added testcase.
-
-2006-08-14  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Code style correction for ansi2knr.
 
@@ -28862,7 +28866,7 @@
 
 	algorithms.tex: changed the page style to plain (for page numbers).
 
-2006-06-08  Vincent Lefèvre  <vincent@vinc17.net>
+2006-06-07  Vincent Lefèvre  <vincent@vinc17.net>
 
 	FAQ update.
 
@@ -28878,6 +28882,8 @@
 2006-05-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	MPFR manual consistency: Custom interface -> Custom Interface.
+
+2006-05-17  Vincent Lefèvre  <vincent@vinc17.net>
 
 	TODO: added a note about the change 4049 in div.c.
 
@@ -28980,7 +28986,7 @@
 
 	added reference
 
-2006-03-01  Vincent Lefèvre  <vincent@vinc17.net>
+2006-02-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	More details concerning mpfr_eq.
 
@@ -29420,7 +29426,7 @@
 
 	added brief description of algorithm for mpfr_zeta
 
-2005-09-19  Vincent Lefèvre  <vincent@vinc17.net>
+2005-09-18  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Mentioned problems with the Tru64 make and other minor changes.
 
@@ -29469,7 +29475,7 @@
 
 	Added missing MPFR_THREAD_ATTR.
 
-2005-09-12  Vincent Lefèvre  <vincent@vinc17.net>
+2005-09-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Avoid a conflict with GMP.
 
@@ -29477,8 +29483,6 @@
 	patch instead.
 
 	Update.
-
-2005-09-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added #include <string.h> for memmove (see ISO C99 standard).
 
@@ -29614,7 +29618,7 @@
 
 	removed useless prototype
 
-2005-09-01  Vincent Lefèvre  <vincent@vinc17.net>
+2005-08-31  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Fixed memory leak (missing MPFR_TMP_FREE in a particular case).
 
@@ -29697,7 +29701,7 @@
 	Patch 1.25 didn't work under OSF1 with cc. Let's do it like
 	the 2.1 branch (it now does work under OSF1 with cc).
 
-2005-08-22  Vincent Lefèvre  <vincent@vinc17.net>
+2005-08-21  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Better locale support (for the decimal point in string conversions
 	and input/output).
@@ -29778,7 +29782,7 @@
 	fixed bug in mpfr_sin (possible wrong inexact flag for rounding to nearest)
 	added items in NEWS and TODO
 
-2005-08-06  Patrick Pélissier  <patrick.pelissier@gmail.com>
+2005-08-05  Patrick Pélissier  <patrick.pelissier@gmail.com>
 
 	Update information
 
@@ -30364,6 +30368,8 @@
 
 	Fixed the mpfr_hypot bug, and re-enabled the test_large_small test.
 
+2005-05-02  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Update.
 
 	Mention the mpfr_hypot bug.
@@ -30455,7 +30461,7 @@
 
 	fixed bug with tiny number
 
-2005-04-23  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2005-04-22  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	removed done item
 
@@ -31898,7 +31904,7 @@
 
 	Remove MPFR_NEED_LONGLONG_H macro.
 
-2004-09-27  Vincent Lefèvre  <vincent@vinc17.net>
+2004-09-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added a cast to avoid an integer overflow.
 
@@ -32677,11 +32683,9 @@
 
 	improved coverage tests
 
-2004-02-15  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2004-02-14  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	new coverage tests
-
-2004-02-14  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	improved coverage test
 
@@ -32883,7 +32887,7 @@
 
 	Reorder the documentation.
 
-2004-01-20  Kevin Ryde  <user42@zip.com.au>
+2004-01-19  Kevin Ryde  <user42@zip.com.au>
 
 	# Add a remark to mpf_strto.
 
@@ -33386,7 +33390,7 @@
 
 	mpfr_mul_2exp/mpfr_div_2exp are not obsolete
 
-2003-10-06  Vincent Lefèvre  <vincent@vinc17.net>
+2003-10-05  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Clearer mpfr_eq documentation (thanks to Kevin Ryde for the remark).
 
@@ -33403,9 +33407,9 @@
 	Infinities are now accepted in mpfr_cmpabs. Updated its definition
 	in the source (no longer sign(abs(b) - abs(c))).
 
-	Use @url{} for URLs.
-
 2003-10-02  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Use @url{} for URLs.
 
 	As suggested by PZ:
 	  o documentation of mpfr_fits_* functions moved to the section
@@ -33487,9 +33491,9 @@
 
 	Changed the remaining stderr to stdout.
 
-	Changed some stderr to stdout.
-
 2003-09-24  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Changed some stderr to stdout.
 
 	Added documentation for mpfr_greater_p, mpfr_greaterequal_p,
 	mpfr_less_p, mpfr_lessequal_p, mpfr_lessgreater_p, mpfr_equal_p
@@ -33589,6 +33593,8 @@
 	(Miscellaneous Float Functions): In mpfr_urandomb and
 	mpfr_random, use @math and @le.
 
+2003-09-20  Kevin Ryde  <user42@zip.com.au>
+
 	(Assigning Floats): In mpfr_set_*, remove remarks about
 	long being rounded (this should be clear already), about rounding of
 	decimal double constants like 0.1 (too basic to appear here),
@@ -33677,11 +33683,9 @@
 	  _ mpfr_print_rnd_mode now has __gmp_const char * return type;
 	  _ some corrections in mpfr.texi, documentencoding set.
 
-2003-08-31  Kevin Ryde  <user42@zip.com.au>
+2003-08-30  Kevin Ryde  <user42@zip.com.au>
 
 	#Corrections to initial checkin.
-
-2003-08-30  Kevin Ryde  <user42@zip.com.au>
 
 	(EXTRA_libfrtests_a_SOURCES): Add amd64.asm.
 
@@ -33761,7 +33765,7 @@
 	(tests_rand_end): Remove explicit __gmp_rands
 	clearing, it's what RANDS_CLEAR does already.
 
-2003-06-27  Kevin Ryde  <user42@zip.com.au>
+2003-06-26  Kevin Ryde  <user42@zip.com.au>
 
 	# Clarify nan/inf bits under efficiency.
 	# Add mpfr_get_d3 ieee portability.
@@ -33780,6 +33784,8 @@
 2003-06-25  Kevin Ryde  <user42@zip.com.au>
 
 	# Add efficiency of separate flag bit operations.
+
+2003-06-24  Kevin Ryde  <user42@zip.com.au>
 
 	Remove file, no longer used.
 
@@ -33817,6 +33823,8 @@
 
 	(check_inexact): For pz, use at least MPFR_PREC_MIN
 	since this is required by mpfr_set_prec.
+
+2003-06-23  Kevin Ryde  <user42@zip.com.au>
 
 	Remove mingw portability of random/rand48, no longer used.
 
@@ -33873,7 +33881,7 @@
 
 	Removed drand48/lrand48/srand48 prototypes.
 
-2003-06-19  Kevin Ryde  <user42@zip.com.au>
+2003-06-18  Kevin Ryde  <user42@zip.com.au>
 
 	Don't use mpz_get_d1, since a 53-bit double is not
 	enough when long is 64-bits.
@@ -33881,7 +33889,7 @@
 	Don't use mpz_get_d1, since a 53-bit double is not
 	enough when long is 64-bits.
 
-2003-06-14  Kevin Ryde  <user42@zip.com.au>
+2003-06-13  Kevin Ryde  <user42@zip.com.au>
 
 	Use autoconf recommended style for time.h with
 	sys/time.h.
@@ -33918,7 +33926,7 @@
 
 	added error function
 
-2003-06-12  Vincent Lefèvre  <vincent@vinc17.net>
+2003-06-11  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Make x positive + some minor changes.
 
@@ -33943,11 +33951,11 @@
 
 	reduced time
 
-2003-06-10  Kevin Ryde  <user42@zip.com.au>
+2003-06-09  Kevin Ryde  <user42@zip.com.au>
 
 	Patch by Torbjorn: use puts not putchar, to avoid GNUPro compiler bug.
 
-2003-06-09  Kevin Ryde  <user42@zip.com.au>
+2003-06-08  Kevin Ryde  <user42@zip.com.au>
 
 	Disable "8093416094703476*2^(-1075)" because mips64
 	SGI cc doesn't seem to like the value (a denorm).
@@ -33988,9 +33996,9 @@
 
 	Code clean-up. Assertion failed avoided.
 
-	Update.
-
 2003-05-22  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Update.
 
 	Macros MPFR_EXP_INVALID (invalid exponent value) and MPFR_EXP_CHECK
 	added. Code update to use MPFR_GET_EXP and MPFR_SET_EXP instead of
@@ -34040,7 +34048,7 @@
 
 	added Riemann Zeta function (contribution from Jean-Luc Re'my)
 
-2003-04-09  Kevin Ryde  <user42@zip.com.au>
+2003-04-08  Kevin Ryde  <user42@zip.com.au>
 
 	Move macros down below @copying.
 
@@ -34103,6 +34111,8 @@
 
 	Comment out an assert tickled for an f with exponent
 	near MPFR_EMIN_MIN.
+
+2003-03-16  Kevin Ryde  <user42@zip.com.au>
 
 	(LONGDOUBLE_NAN_ACTION): New version for IEEE quad big
 	endian, fixing HP cc.
@@ -34284,13 +34294,13 @@
 	Use mpfr_set_nan and mpfr_set_inf for NaN and Inf tests,
 	not "double" nans and infs.
 
-	Use mpfr_set_nan and mpfr_set_inf for NaN and Inf tests,
-	not "double" nans and infs.
-
-	Use mpfr_set_nan and mpfr_set_inf for NaN and Inf tests,
-	not "double" nans and infs.
-
 2003-01-22  Kevin Ryde  <user42@zip.com.au>
+
+	Use mpfr_set_nan and mpfr_set_inf for NaN and Inf tests,
+	not "double" nans and infs.
+
+	Use mpfr_set_nan and mpfr_set_inf for NaN and Inf tests,
+	not "double" nans and infs.
 
 	Use tests_start_mpfr / tests_end_mpfr.
 
@@ -34317,13 +34327,13 @@
 
 	Correction to memory leak fix, need "result" for final rounding.
 
+2003-01-17  Kevin Ryde  <user42@zip.com.au>
+
 	Fix two memory leaks.
 
 	(LDADD): Add $(MPFR_LIBM).
 
 	Remove -lm setups, now handled by MPFR_CHECK_LIBM.
-
-2003-01-17  Kevin Ryde  <user42@zip.com.au>
 
 	(MPFR_CHECK_LIBM): New macro.
 	(MPFR_CONFIGS): Use it.
@@ -34431,12 +34441,10 @@
 
 	get rid of ceil() call, that requires -lm
 
-2003-01-15  Kevin Ryde  <user42@zip.com.au>
+2003-01-14  Kevin Ryde  <user42@zip.com.au>
 
 	Force LDBL_MANT_DIG on IEEE extended, to avoid problems with
 	some i386 gcc.
-
-2003-01-14  Kevin Ryde  <user42@zip.com.au>
 
 	Avoid problems with bad LDBL_MAX and LDBL_MANT_DIG on some i386 gcc.
 
@@ -34473,7 +34481,7 @@
 
 	added one test
 
-2003-01-09  Kevin Ryde  <user42@zip.com.au>
+2003-01-08  Kevin Ryde  <user42@zip.com.au>
 
 	# Add a copyright year.
 
@@ -34481,8 +34489,6 @@
 
 	(mpn_exp): Don't store -1 in a uint then return it as a long.
 	Fixes systems such as alpha where sizeof(uint)!=sizeof(long).
-
-2003-01-08  Kevin Ryde  <user42@zip.com.au>
 
 	(AC_CHECK_HEADERS): Remove fpu_control.h, no longer required.
 
@@ -34543,7 +34549,7 @@
 
 	Static function digit_value_in_base is now compatible with any locale.
 
-2003-01-04  Kevin Ryde  <user42@zip.com.au>
+2003-01-03  Kevin Ryde  <user42@zip.com.au>
 
 	(<sys/fpu.h>) [__mips]: Move from mpfr-test.h to tests/tests.c,
 	and conditionalize with HAVE_SYS_FPU_H.
@@ -34551,8 +34557,6 @@
 	(AC_CHECK_HEADERS): Add sys/fpu.h.
 
 	(HAVE_DENORMS) [__mips]: Remove this, let the configure test decide.
-
-2003-01-03  Kevin Ryde  <user42@zip.com.au>
 
 	Use separate function calls to strncasecmp and strncmp, rather than
 	?: on function pointers, since the latter demands declarations not
@@ -34562,7 +34566,7 @@
 
 	Added some potential bugs (mpfr_exp2 is known to have such a bug).
 
-2003-01-03  Kevin Ryde  <user42@zip.com.au>
+2003-01-02  Kevin Ryde  <user42@zip.com.au>
 
 	Add gmp-impl.h for __gmp_free_func.
 
@@ -34650,11 +34654,9 @@
 
 	added new known bugs
 
-2002-11-30  Kevin Ryde  <user42@zip.com.au>
+2002-11-29  Kevin Ryde  <user42@zip.com.au>
 
 	Add notes on mpf_t maintaining actual size for efficiency.
-
-2002-11-29  Kevin Ryde  <user42@zip.com.au>
 
 	Remove mpfr_set_machine_rnd_mode task.
 
@@ -34699,7 +34701,7 @@
 
 	added 3 tests that make libm fail under HP-PA
 
-2002-11-24  Vincent Lefèvre  <vincent@vinc17.net>
+2002-11-23  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Update.
 
@@ -34869,7 +34871,7 @@
 
 	added test for inexact flag (bug found by Andreas Enge)
 
-2002-09-24  Kevin Ryde  <user42@zip.com.au>
+2002-09-23  Kevin Ryde  <user42@zip.com.au>
 
 	(mpfr_init, mpfr_init2, mpfr_set_prec): Make void return, these always
 	succeed.
@@ -34886,7 +34888,7 @@
 
 	cmp_abs -> cmpabs (for compatibility with mpz)
 
-2002-09-22  Kevin Ryde  <user42@zip.com.au>
+2002-09-21  Kevin Ryde  <user42@zip.com.au>
 
 	(Converting Floats): Don't refer to the internal _mp_free_func with
 	mpfr_get_str.
@@ -34916,7 +34918,7 @@
 
 	fixed bug in reflection formula for x<1
 
-2002-08-24  Vincent Lefèvre  <vincent@vinc17.net>
+2002-08-23  Vincent Lefèvre  <vincent@vinc17.net>
 
 	MPFR now needs GMP 4.1 or higher.
 
@@ -34937,7 +34939,7 @@
 	Use $(top_builddir) consistently with libmpfr.a, for the benefit of
 	srcdir!=builddir.
 
-2002-08-03  Vincent Lefèvre  <vincent@vinc17.net>
+2002-08-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Don't touch user specified flags (CFLAGS). [patch by Kevin Ryde]
 
@@ -34945,12 +34947,10 @@
 
 	Better check for strcasecmp and strncasecmp. Bug fixed.
 
-2002-07-29  Vincent Lefèvre  <vincent@vinc17.net>
+2002-07-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Functions mpfr_greater_p, mpfr_greaterequal_p, mpfr_less_p,
 	mpfr_lessequal_p, mpfr_lessgreater_p, mpfr_equal_p, mpfr_unordered_p.
-
-2002-07-28  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Use AUTOMAKE_OPTIONS = gnu [suggested by Kevin Ryde]
 
@@ -35067,6 +35067,8 @@
 
 	Update from ftp://ftp.gnu.org/pub/gnu/config/
 
+2002-07-14  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Add __sparc__ (patch by Nix <nix@esperi.demon.co.uk>).
 
 	Note about randomized tests.
@@ -35099,7 +35101,7 @@
 
 	added pointer to mpfr_inp_str in mpfr_set_str
 
-2002-06-27  Vincent Lefèvre  <vincent@vinc17.net>
+2002-06-26  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Update.
 
@@ -35120,18 +35122,16 @@
 
 	added mpfr_modf
 
-2002-06-13  Vincent Lefèvre  <vincent@vinc17.net>
+2002-06-12  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added modf (to implement).
 
-2002-06-09  Vincent Lefèvre  <vincent@vinc17.net>
+2002-06-08  Vincent Lefèvre  <vincent@vinc17.net>
 
 	check: Apply a hack to the parameter order to make sparc gcc 2.95.2
 	happy (patch by Kevin Ryde) + static added.
 
 	Patch by Kevin Ryde.
-
-2002-06-08  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Suppress tests if sqrt is not affected by mpfr_set_machine_rnd_mode
 	(patch by Kevin Ryde).
@@ -35185,7 +35185,7 @@
 	Patch by Kevin Ryde for memory leak checking + misc declaration fixes.
 	Code moved from mpfr-test.h to tests.c.
 
-2002-05-15  Vincent Lefèvre  <vincent@vinc17.net>
+2002-05-14  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Ternary flag for mpfr_agm.
 
@@ -35215,7 +35215,7 @@
 
 	fixed errors found by Sylvain Pion
 
-2002-04-28  Vincent Lefèvre  <vincent@vinc17.net>
+2002-04-27  Vincent Lefèvre  <vincent@vinc17.net>
 
 	not relevant -> undefined.
 
@@ -35248,10 +35248,10 @@
 
 	Structures are used to get correct alignment.
 
+2002-04-23  Vincent Lefèvre  <vincent@vinc17.net>
+
 	_MPFR_INF*_BYTES fix. On alpha, use a "double" for the bytes,
 	to avoid a mis-conversion on alpha gcc 3.0.2. (Kevin Ryde)
-
-2002-04-23  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Underflow semantics changed (not tested).
 
@@ -35261,7 +35261,7 @@
 
 	modifs from Andreas
 
-2002-04-23  Vincent Lefèvre  <vincent@vinc17.net>
+2002-04-22  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Union -> array + cast because of the HP compiler.
 
@@ -35269,6 +35269,8 @@
 
 	Avoid constant floating expression, as this doesn't give the correct
 	result with gcc on some Alpha machines. (patch by Paul Zimmermann)
+
+2002-04-19  Vincent Lefèvre  <vincent@vinc17.net>
 
 	RAND_MAX defined if not already defined (as it should be).
 
@@ -35360,9 +35362,9 @@
 
 	Removed switches -g -O2 as already done by configure.
 
-	Update.
-
 2002-04-14  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Update.
 
 	Removed useless @iftex...
 
@@ -35396,9 +35398,9 @@
 
 	Added a note about the native SunOS 4 C compiler.
 
-	Type fixed.
-
 2002-04-11  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Type fixed.
 
 	mpfr_set_d bug fixed, but other bugs still remain...
 
@@ -35422,9 +35424,9 @@
 
 	Check for gcc float-conversion bug.
 
-	Added comment for mpfr_round_raw_generic (about using 1-bit precision).
-
 2002-04-10  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Added comment for mpfr_round_raw_generic (about using 1-bit precision).
 
 	Update (thanks to Nathalie Revol).
 
@@ -35435,6 +35437,8 @@
 
 	Added missing headers in libmpfr_a_SOURCES.
 
+2002-04-09  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Update for the next pre-release.
 
 	Possible tconst_log2 crash under Solaris.
@@ -35442,8 +35446,6 @@
 	Under OSF, use option -ffloat-store only when the compiler is gcc.
 
 	include_HEADERS should contain only mpfr.h and mpf2mpfr.h.
-
-2002-04-09  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added code to support fesetround under Solaris.
 
@@ -35463,11 +35465,11 @@
 
 	Note about overflows. Functions mpfr_{div,mul}_{si,ui} described.
 
+2002-04-07  Vincent Lefèvre  <vincent@vinc17.net>
+
 	Update for the next (and last?) pre-release.
 
 	Stricter test for HAVE_INFS.
-
-2002-04-07  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Update.
 
@@ -35483,9 +35485,9 @@
 
 	Update.
 
-	New file from Paul.
-
 2002-04-05  Vincent Lefèvre  <vincent@vinc17.net>
+
+	New file from Paul.
 
 	COPYING.LIB removed.
 
@@ -35512,7 +35514,7 @@
 	use AC_CHECK_HEADERS to check for fenv.h
 	and AC_CHECK_FUNCS to check for lrand48
 
-2002-04-05  Vincent Lefèvre  <vincent@vinc17.net>
+2002-04-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Added "VERSION" and "prepare" descriptions.
 
@@ -35548,11 +35550,9 @@
 
 	added missing cast to double
 
-2002-04-03  Vincent Lefèvre  <vincent@vinc17.net>
+2002-04-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	[ ] used around error message.
-
-2002-04-02  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Update.
 
@@ -35734,6 +35734,8 @@
 
 	Do not read the exponent if it has no meaning.
 
+2002-03-12  Vincent Lefèvre  <vincent@vinc17.net>
+
 	mpfr_random update (patch by Kevin Ryde).
 
 	2 more known bugs.
@@ -35798,6 +35800,8 @@
 2002-03-05  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Casts fixed.
+
+2002-03-04  Vincent Lefèvre  <vincent@vinc17.net>
 
 	File renaming.
 
@@ -36167,9 +36171,9 @@
 
 	Better sign comparison.
 
-	Use MPFR_SET_POS.
-
 2001-11-29  Vincent Lefèvre  <vincent@vinc17.net>
+
+	Use MPFR_SET_POS.
 
 	Bug fixed concerning integer overflows.
 
@@ -36484,7 +36488,7 @@
 
 	Some -'s missing in floating-point.
 
-2001-11-09  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+2001-11-08  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
 
 	modifs suite aux remarques de Nathalie
 
@@ -36574,9 +36578,9 @@
 
 	fixed MLK's
 
-	fixed MLK for Inf or Nan
-
 2001-10-31  Paul Zimmermann  <Paul.Zimmermann@inria.fr>
+
+	fixed MLK for Inf or Nan
 
 	fixed MLK in check_case_2
 
@@ -36742,11 +36746,9 @@
 
 	increased MAX_PREC
 
-2001-10-26  Guillaume Hanrot  <Guillaume.Hanrot@ens-lyon.fr>
+2001-10-25  Guillaume Hanrot  <Guillaume.Hanrot@ens-lyon.fr>
 
 	Changed the type of err from mp_prec_t (unsigned) to int.
-
-2001-10-25  Guillaume Hanrot  <Guillaume.Hanrot@ens-lyon.fr>
 
 	Added tests for inexact flag.
 
@@ -37301,6 +37303,8 @@
 	Macro MPFR_RET added. Ternary value for mpfr_set4.
 
 	New flags.
+
+2001-09-10  Vincent Lefèvre  <vincent@vinc17.net>
 
 	Parameter added to mpfr_round_raw: pointer to inexact ternary value.
 
