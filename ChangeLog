@@ -1,5 +1,11 @@
 2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
 
+	[tests/tnrandom.c] Fixed compilation failure with mini-gmp.
+
+	ChangeLog update with tools/update-changelog
+
+2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
+
 	[tools] Improvement for the ChangeLog generation.
 
 	* tools/gitlog-to-changelog: modified regexp for --strip-cherry-pick
