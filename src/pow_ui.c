@@ -89,7 +89,7 @@ mpfr_pow_ui (mpfr_ptr y, mpfr_srcptr x, unsigned long int n, mpfr_rnd_t rnd)
   /* Augment exponent range */
   MPFR_SAVE_EXPO_MARK (expo);
 
-  /* setup initial precision */
+  /* set up initial precision */
   prec = MPFR_PREC (y) + 3 + GMP_NUMB_BITS
     + MPFR_INT_CEIL_LOG2 (MPFR_PREC (y));
   mpfr_init2 (res, prec);
