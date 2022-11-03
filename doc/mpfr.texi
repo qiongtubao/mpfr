@@ -1918,7 +1918,8 @@ and @code{mpfr_div_d}.
 @deftypefunx int mpfr_sqrt_ui (mpfr_t @var{rop}, unsigned long int @var{op}, mpfr_rnd_t @var{rnd})
 Set @var{rop} to @m{\sqrt{@var{op}}, the square root of @var{op}}
 rounded in the direction @var{rnd}.  Set @var{rop} to @minus{}0 if
-@var{op} is @minus{}0, to be consistent with the IEEE@tie{}754 standard.
+@var{op} is @minus{}0, to be consistent with the IEEE@tie{}754 standard
+(thus this differs from @code{mpfr_rootn_ui} with @math{@var{n} = 2}).
 Set @var{rop} to NaN if @var{op} is negative.
 @end deftypefun
 
