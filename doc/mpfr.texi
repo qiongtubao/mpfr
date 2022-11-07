@@ -2007,7 +2007,7 @@ usual limit rules, i.e., the same sign as @var{op} if @var{n} is odd, and
 positive if @var{n} is even.
 
 These functions agree with the rootn operation of the IEEE@tie{}754 standard.
-Note that it is here restricted to @math{@var{n} @ge{} 0}. Functions
+Note that it is here restricted to @tm{@var{n} @ge{} 0}. Functions
 allowing a negative @var{n} may be implemented in the future.
 @end deftypefun
 
