@@ -1647,7 +1647,7 @@ regular_fg (struct number_parts *np, mpfr_srcptr p,
         }
 
       if (str_len > 0)
-        /* some nonzero digits in fractional part */
+        /* some non-zero digits in fractional part */
         {
           np->point = MPFR_DECIMAL_POINT;
           np->fp_ptr = str;
