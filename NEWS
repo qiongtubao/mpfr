@@ -23,7 +23,7 @@ https://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 Changes from version 4.1.0 to version 4.1.1:
 - Bug fixes (see <https://www.mpfr.org/mpfr-4.1.0/#fixed> and/or the
   ChangeLog file), in particular for macros implementing functions.
-- Improved manual formatting, by using a recent texinfo.tex file.
+- Improved manual formatting.
 
 Changes from versions 4.0.* to version 4.1.0:
 - The "épinards à la crème" release.
