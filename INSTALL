@@ -37,7 +37,7 @@ MPFR).
    not been done yet and if patches are available. You can check
    on the release page:
 
-     https://www.mpfr.org/mpfr-4.1.1/
+     https://www.mpfr.org/mpfr-4.1.2/
 
    which may have additional information. The patches can be applied
    with commands like:
