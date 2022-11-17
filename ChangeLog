@@ -1,4 +1,216 @@
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated version to 4.1.1.
+
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[NEWS] Update for 4.1.1.
+
+	Removed "by using a recent texinfo.tex file" because GNU Texinfo 7.0
+	has been released in the mean time (we're actually using a slightly
+	more recent version, but the current version of the MPFR manual has
+	workarounds that do not need the latest fixes in texinfo.tex).
+
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Changed a @need command due to a bug in @need.
+
+	A page break was introduced for "@need 800" while there was the
+	space for 12 lines of text + 3 paragraph skips, as seen after the
+	change. That's much more than the 8/10 in needed by "@need 800".
+	So the page break was incorrect!
+
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Added @need commands to prevent page breaks.
+
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Hack to improve TeX output (PDF).
+
+	Define a @fptt macro to fix the TeX output (PDF) issue mentioned
+	in commit 1877cf9aef96c2280aab60f67e5e7302676d199a (if the style
+	of HTML output is fixed to be more like TeX output, this code will
+	need an update).
+
+2022-11-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Added a note about a TeX output (PDF) issue.
+
+	This affects "[]", which appears in the mpfr_sum and mpfr_dot
+	function prototypes.
+
+2022-11-16  Vincent Lefevre  <vincent@vinc17.net>
+
+	Consistency: s/non(zero|positive|negative)/non-$1/
+
+	Changed non(zero|positive|negative) to non-zero, etc. for consistency
+	(target files: src & tests directory, doc/README.dev, doc/mpfr.texi).
+	Did it this way because the former was in minority (21 vs 165) and
+	the IEEE 754-2019 standard uses a hyphen.
+
+2022-11-16  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Final typographic and style corrections.
+
+	Actually a bit more than that, since this affected the textual part
+	of the PDF file (used for searching and copy-paste): the underscore
+	character needs to be in something like @code or @samp to be present
+	in this textual part.
+
+2022-11-16  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated version to 4.1.1-rc1 again with the new tools/update-version.
+
+	All the expected replacements have now *really* been done thanks to
+	commit 9f1d88a7ab750a9f33ff5c7f6b27bc2e941ca4b6.
+
+2022-11-16  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/update-version] Fixed replacements in "doc/mpfr.texi".
+
+	The change done in commits 4885b57add174f390eff29abe14d12fb5ebd6a61
+	and 7eda345244f503359d14cd5bae1ed42865d39ee8 was incorrect as there
+	are 2 identical replacements to do in "doc/mpfr.texi", not just one.
+	The previous code changed lines separately. But for the check of
+	failing replacements, a global change on the full file is needed;
+	thus the 2 identical replacements were expected to be done at the
+	same time, so that the "g" modifier is needed on the regexp.
+
+2022-11-15  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated doc/texinfo.tex to 2022-11-13.08
+
+2022-11-11  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/README.dev] Updated "To make a release".
+
+	[doc/README.dev] "To make a release": mention the README file.
+
+2022-11-11  Vincent Lefevre  <vincent@vinc17.net>
+
+	[README] Changed link to the README.dev file to the 4.1 branch.
+
+	It is probably better to give the link in the 4.1 branch, since
+	we are in the 4.1 branch: some changes in master may not apply
+	to the 4.1 branch (for instance, the list of macros and the list
+	of environment variables that affect the tests). Future changes
+	useful for the 4.1 branch could be cherry-picked if need be.
+
+2022-11-10  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated version to 4.1.1-rc1 again with the new tools/update-version.
+
+	All the expected replacements have now been done in doc/mpfr.texi,
+	thanks to commit 9645c5255492c6d00133a3a90e479d374b6c061d.
+
+2022-11-10  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/update-version] Updated a replacement.
+
+	This was needed due to a change done on 2018-09-07 in doc/mpfr.texi
+	(commit 84796030c7c732e8e66e5e650ec929c541dd207f / SVN r13153), as
+	said in the previous commit.
+
+2022-11-10  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/update-version] Check for failing replacements.
+
+	This script currently fails due to a change done on 2018-09-07 in
+	doc/mpfr.texi (commit 84796030c7c732e8e66e5e650ec929c541dd207f /
+	SVN r13153), and this issue remained unnoticed until now,
+	in particular due to the absence of checking for failing
+	replacements.
+
+	The penultimate non-patchlevel release was done on 2017-12-25, i.e.
+	before this change, and no patchlevel releases have been done yet
+	for the latest release, so that no current releases are affected by
+	this issue, but the 4.1.1 release candidate is affected.
+
+2022-11-09  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated doc/texinfo.tex to 2022-11-07.17 (from GNU Texinfo 7.0).
+
+2022-11-08  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Various corrections and improvements.
+
+	* mpfr_subnormalize: define EXP(x) and PREC(x).
+	* More typographic corrections and improvements.
+
+2022-11-07  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Added a comment (ref to the GNU Texinfo spacing bug).
+
+2022-11-07  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Remaining typographic correction for a math expression.
+
+	This is specific to the 4.1 branch as the text was removed in master
+	with the new function mpfr_rootn_si.
+
+2022-11-07  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Typographic corrections and English usage.
+
+	* More documentation for the @m{T,N} macro.
+	* Note a spacing bug in texi2dvi from GNU Texinfo 6.8 with macros
+	  (found while testing).
+	* Define macro @EXP (and \EXP in TeX).
+	* Typographic corrections for math expressions and English usage.
+
+2022-11-04  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Minor typographic correction.
+
+	This corrects commit d1a6e781428506bc49bc98d632265cf2d4406c9f.
+
+2022-11-04  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Updated the month.
+
+2022-11-04  Vincent Lefevre  <vincent@vinc17.net>
+
+	[doc/mpfr.texi] Various improvements and style corrections from master.
+
+	with conflict resolutions.
+
+2022-11-03  Vincent Lefevre  <vincent@vinc17.net>
+
+	[manual] For sqrt, mention the relation with rootn.
+
+	This corresponds to commit a9bdb273b79ae470ad2177c27e7e978f4bc9831e
+	from master, ignoring mpfr_rootn_si, which is not in the 4.1 branch.
+
+2022-11-03  Vincent Lefevre  <vincent@vinc17.net>
+
+	Fixed some minor mistakes.
+
+	* Minor mistakes in doc/mpfr.texi reported by Ivan Panchenko:
+	    https://sympa.inria.fr/sympa/arc/mpfr/2022-10/msg00020.html
+	  (spacing and italicization not fixed yet).
+	* Fixed similar mistakes in the other files.
+
+2022-11-03  Vincent Lefèvre  <vincent@vinc17.net>
+
+	[doc] Update about "case insensitive" and issue with Turkish locales
+	for "I" / "i".
+
+	  * mpfr.texi: added "with the rules of the C locale" in the
+	    mpfr_strtofr description.
+	  * README.dev: completed information about Turkish locales.
+
+2022-11-03  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated doc/texinfo.tex to 2022-10-18.18
+
+	Update from the texinfo Git repository.
+	  * The generated mpfr.html and mpfr.info files remain the same.
+	  * For mpfr.pdf, there are some spacing improvements.
+
 2022-10-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	ChangeLog update with tools/update-changelog
 
 	[tools/update-changelog] Use UTC to generate the ChangeLog file.
 
