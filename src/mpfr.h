@@ -27,7 +27,7 @@ https://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 #define MPFR_VERSION_MAJOR 4
 #define MPFR_VERSION_MINOR 1
 #define MPFR_VERSION_PATCHLEVEL 1
-#define MPFR_VERSION_STRING "4.1.1-rc1"
+#define MPFR_VERSION_STRING "4.1.1"
 
 /* User macros:
    MPFR_USE_FILE:        Define it to make MPFR define functions dealing
