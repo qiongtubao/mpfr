@@ -1,5 +1,17 @@
 2022-12-13  Vincent Lefevre  <vincent@vinc17.net>
 
+	[doc/README.dev] "To make a release": update.
+
+	[NEWS] Update for the 4.2.0 release: binary compatibility.
+
+	[doc/README.dev] "To make a release": update about <branch>-root tag.
+
+	[README] Updated URL of the README.dev file (for the 4.2 branch).
+
+	Updated version to 4.2.0-rc1.
+
+	ChangeLog update with tools/update-changelog
+
 	[src/Makefile.am] Updated -version-info to 8:0:2 for MPFR 4.2.0.
 
 	[manual] Section "API Compatibility": lexicographic order.
