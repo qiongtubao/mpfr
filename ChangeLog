@@ -1,4 +1,91 @@
+2023-01-06  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated version to 4.2.0.
+
+2023-01-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	[src/zeta.c] For s < 1/2, use mpfr_sinpi now that it is available.
+
+	This replaces the use of mpfr_sin with a multiplication by π and
+	resolves a potential (but very unlikely) underflow issue; a comment
+	is updated, with an explanation about that.
+
+2023-01-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated copyright notice for all the Makefile.am files.
+
+	To be similar to the other files, added:
+	* Contributed by the AriC and Caramba projects, INRIA.
+	* This file is part of the GNU MPFR Library.
+
+	(These Makefile.am files still have their special license.)
+
+2023-01-05  Vincent Lefevre  <vincent@vinc17.net>
+
+	Copyright notice update: added 2023.
+
+	Command used:
+	  perl -pi -e 's/ (\d{4}-)?(2022)(?= Free Software)/
+	               " ".($1||"$2-").($2+1)/e' **/*(^/)
+	under zsh, reverting doc/texinfo.tex (copied from GNU Texinfo)
+	and the tools/mbench directory (not distributed with MPFR).
+	Removed 2022 from the example in the doc/README.dev file.
+
+2023-01-04  Vincent Lefevre  <vincent@vinc17.net>
+
+	[src/zeta.c] Updated a comment about mpfr_sinpi.
+
+	[doc/mpfr.texi] Updated the month.
+
+2022-12-17  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/mpfrlint] Updated the __gmp_ test.
+
+	* No longer exclude '^tests/tabort_defalloc': this is no longer needed
+	  since commit 41bed90365fd1296cd05f49c813ab0a0b151a62e in 2017.
+	* Exclude a new comment.
+
+2022-12-15  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tests/tsprintf.c] Added a comment about a possible test failure.
+
+	In short, if the error is like
+	  repl-vsnprintf.c:389: GNU MP assertion failed: len < total_width
+	this is a GMP (or MPIR) issue in __gmp_replacement_vsnprintf.
+
+	References:
+	  https://sympa.inria.fr/sympa/arc/mpfr/2022-10/msg00001.html
+	  https://sympa.inria.fr/sympa/arc/mpfr/2022-10/msg00027.html
+	  https://gmplib.org/list-archives/gmp-bugs/2022-October/005200.html
+
+2022-12-15  Vincent Lefevre  <vincent@vinc17.net>
+
+	Documentation: update about requirements for building MPFR.
+
+	* doc/mpfr.texi: mentioned C++ compilers and the potential issue
+	  with type punning via union.
+	* INSTALL: completed (0) to be similar to what doc/mpfr.texi says.
+
+2022-12-15  Vincent Lefevre  <vincent@vinc17.net>
+
+	[tools/update-version] Fixed replacements in "INSTALL".
+
+	Due to commit 4885b57add174f390eff29abe14d12fb5ebd6a61, only the first
+	of the 4 replacements in INSTALL was done.
+
+2022-12-14  Vincent Lefevre  <vincent@vinc17.net>
+
+	[configure.ac] Added a comment about a possible AM_PROG_AR failure.
+
+	The reason is that on some platforms, GMP chooses a non-default mode
+	(a.k.a. ABI). MPFR has some workaround thanks to GMP_CC and GMP_CFLAGS
+	provided by GMP, but this may not be sufficient, e.g. on power-aix. In
+	such a case, the user needs to either force GMP to use the default mode
+	or provide an AR variable for MPFR's configure; see INSTALL file.
+
 2022-12-13  Vincent Lefevre  <vincent@vinc17.net>
+
+	ChangeLog update with tools/update-changelog
 
 	[doc/README.dev] "To make a release": update.
 
