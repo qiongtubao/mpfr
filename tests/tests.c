@@ -1086,10 +1086,9 @@ bad_cases (int (*fct)(FLIST), int (*inv)(FLIST), const char *name,
                 }
               if (inex_inv)
                 {
-                  printf ("bad_cases: f exact while f^(-1) inexact,\n"
-                          "due to a poor choice of the parameters.\n");
-                  exit (1);
-                  /* alternatively, goto next_i */
+                  if (dbg)
+                    printf ("bad_cases: f exact while f^(-1) inexact\n");
+                  goto does_not_match;
                 }
               inex = 0;
               break;
@@ -1112,6 +1111,10 @@ bad_cases (int (*fct)(FLIST), int (*inv)(FLIST), const char *name,
           if (mpfr_nanflag_p () || mpfr_overflow_p () || mpfr_underflow_p ()
               || ! mpfr_equal_p (z, y))
             {
+              /* This may occur when psup is not large enough: evaluating
+                 x = (f^(-1))(y) then z = f(x) may not give back y if the
+                 precision of x is too small. */
+            does_not_match:
               if (dbg)
                 {
                   printf ("bad_cases: inverse doesn't match for %s\ny = ",
