@@ -153,7 +153,7 @@ mpfr_compound_si (mpfr_ptr y, mpfr_srcptr x, long n, mpfr_rnd_t rnd_mode)
   for (nloop = 0; ; nloop++)
     {
       unsigned int inex;
-      mpfr_exp_t e, e2;
+      mpfr_exp_t e, e2, ex;
       mpfr_prec_t precu = MPFR_ADD_PREC (prec, extra);
       mpfr_prec_t new_extra;
       mpfr_rnd_t rnd2;
@@ -242,29 +242,36 @@ mpfr_compound_si (mpfr_ptr y, mpfr_srcptr x, long n, mpfr_rnd_t rnd_mode)
           break;
         }
 
-      /* Check whether x^n fits in the target precision (or 1 more bit for
-         rounding to nearest), as in such a case, Ziv's strategy may take
-         too long.
-         Let k be the minimum length of the significand of x, i.e. if x is
-         regarded as an odd integer, this means that 2^(k-1) <= x < 2^k.
-         Thus 2^(n*(k-1)) <= x^n < 2^(k*n), and x^n has between n*(k-1)+1
-         and k*n bits. Since this does not depend on the working precision,
-         we only check this at the first iteration (nloop == 0).
-         So x^n can fit into p bits only if p >= n*(k-1)+1, which implies
-         that k-1 <= trunc((p-1)/n). This latter condition will be tested
-         in order to avoid a possible integer overflow in the computation
-         of n*(k-1). Let's summarize: if k-1 <= trunc((p-1)/n), then x^n
-         may fit into p bits (we will need to check); otherwise x^n cannot
-         fit into p bits (so there is nothing special to do). */
+      /* Detect particular cases where Ziv's strategy may take too much
+         memory and be too long, i.e. when x^n fits in the target precision
+         (+ 1 additional bit for rounding to nearest) and the exact result
+         (1+x)^n is very close to x^n.
+         Necessarily, x is a large even integer and n > 0 (thus n > 1).
+         Since this does not depend on the working precision, we only
+         check this at the first iteration (nloop == 0).
+         Hence the first "if" below and the kx < ex test of the second "if"
+         (x is an even integer iff its least bit 1 has exponent >= 1).
+         The second test of the second "if" corresponds to another simple
+         condition that implies that x^n fits in the target precision.
+         Here are the details:
+         Let k be the minimum length of the significand of x, and x' the odd
+         (integer) significand of x. This means  that 2^(k-1) <= x' < 2^k.
+         Thus 2^(n*(k-1)) <= (x')^n < 2^(k*n), and x^n has between n*(k-1)+1
+         and k*n bits. So x^n can fit into p bits only if p >= n*(k-1)+1,
+         i.e. n*(k-1) <= p-1.
+         Note that x >= 2^k, so that x^n >= 2^(k*n). Since raw overflow
+         has already been detected, k*n cannot overflow if computed with
+         the mpfr_exp_t type. Hence the second test of the second "if",
+         which cannot overflow. */
       MPFR_ASSERTD (n < 0 || n > 1);
-      if (nloop == 0 && n > 1 && mpfr_cmp_ui (x, 65535) > 0)
+      if (nloop == 0 && n > 1 && (ex = MPFR_GET_EXP (x)) >= 17)
         {
           mpfr_prec_t kx = mpfr_min_prec (x);
           mpfr_prec_t p = py + (rnd_mode == MPFR_RNDN);
 
           MPFR_LOG_MSG (("Check if x^n fits... n=%ld kx=%Pd p=%Pd\n",
                          n, kx, p));
-          if (kx - 1 <= (p - 1) / n)
+          if (kx < ex && n * (mpfr_exp_t) (kx - 1) <= p - 1)
             {
               mpfr_t v;
 
