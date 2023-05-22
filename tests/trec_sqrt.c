@@ -176,6 +176,26 @@ bad_case2 (void)
       }
 }
 
+/* Before commits 270f4df6b3a49caae1cf564dcdc1c55b1c5989eb (master) and
+   934dd8842b4bdeb919a73123203bc8ce56db38d1 (4.2 branch) on 2023-04-17,
+   this was giving a stack overflow in mpfr_rec_sqrt due to a Ziv loop
+   where the working precision was increased additively instead of the
+   standard Ziv loop using the MPFR_ZIV_* macros.
+*/
+static void
+bad_case3 (void)
+{
+  mpfr_t x, y;
+
+  mpfr_init2 (x, 123456);
+  mpfr_init2 (y, 4);
+  mpfr_set_ui (y, 9, MPFR_RNDN);
+  mpfr_ui_div (x, 1, y, MPFR_RNDN);
+  mpfr_rec_sqrt (y, x, MPFR_RNDN);
+  mpfr_clear (x);
+  mpfr_clear (y);
+}
+
 /* timing test for n limbs (so that we can compare with GMP speed -s n) */
 static void
 test (unsigned long n)
@@ -237,6 +257,7 @@ main (int argc, char *argv[])
   special ();
   bad_case1 ();
   bad_case2 ();
+  bad_case3 ();
   test_generic (MPFR_PREC_MIN, 300, 15);
 
   data_check ("data/rec_sqrt", mpfr_rec_sqrt, "mpfr_rec_sqrt");
