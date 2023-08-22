@@ -1,4 +1,10 @@
+2023-08-22  Vincent Lefevre  <vincent@vinc17.net>
+
+	Updated version to 4.2.1.
+
 2023-08-18  Vincent Lefevre  <vincent@vinc17.net>
+
+	ChangeLog update with tools/update-changelog
 
 	[tools/gitlog-to-changelog] Improve --strip-cherry-pick for this repository.
 
