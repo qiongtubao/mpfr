@@ -1678,6 +1678,59 @@ large_prec_for_g (void)
   mpfr_clear (x);
 }
 
+/* On 2023-12-02, this gives
+     vasprintf.c:670: MPFR assertion failed: len <= strlen (s)
+   with assertion checking (--enable-assert), or
+     [MPFR] tests_free(): bad size 1, should be 2
+   with tests_memory_disabled = 0 (default unless mini-gmp is used),
+   which means possible memory corruption with custom memory allocators
+   that do not ignore the size parameter of the "free" function, or
+     Error in check_null
+     expected r = 1, s = { 0, 0, 1 }
+     got      r = 0, s = { 0, 1, 1 }
+   with tests_memory_disabled = 1.
+   Fixed in commits
+     390e51ef8570da4e338e9806ecaf2d022210d951 (2023-12-03)
+     3babf029fe604c08ec517ca6945a5efb155f69d1 (2023-12-13)
+*/
+static void
+check_null (void)
+{
+  int i;
+
+  for (i = 0; i < 2; i++)
+    {
+      int r;
+      char s[3] = { 1, 1, 1 };
+      char t[5] = { 1, 1, 1, 1, 1 };
+
+      r = i == 0 ? mpfr_sprintf (s, "%c", 0)
+        : mpfr_snprintf (s, 2, "%c", 0) ;
+      if (r != 1 || s[0] != 0 || s[1] != 0 || s[2] != 1)
+        {
+          printf ("Error in check_null, i = %d\n", i);
+          printf ("expected r = %d, s = { %d, %d, %d }\n",
+                  1, 0, 0, 1);
+          printf ("got      r = %d, s = { %d, %d, %d }\n",
+                  r, s[0], s[1], s[2]);
+          exit (1);
+        }
+
+      r = i == 0 ? mpfr_sprintf (t, "%c%c%c", 8, 0, 9)
+        : mpfr_snprintf (t, 4, "%c%c%c", 8, 0, 9);
+      if (r != 3 ||
+          t[0] != 8 || t[1] != 0 || t[2] != 9 || t[3] != 0 || t[4] != 1)
+        {
+          printf ("Error in check_null, i = %d\n", i);
+          printf ("expected r = %d, t = { %d, %d, %d, %d, %d }\n",
+                  3, 8, 0, 9, 0, 1);
+          printf ("got      r = %d, t = { %d, %d, %d, %d, %d }\n",
+                  r, t[0], t[1], t[2], t[3], t[4]);
+          exit (1);
+        }
+    }
+}
+
 #if defined(HAVE_LOCALE_H) && defined(HAVE_SETLOCALE)
 
 /* The following tests should be equivalent to those from test_locale()
@@ -1853,6 +1906,7 @@ main (int argc, char **argv)
   mixed ();
   check_length_overflow ();
   large_prec_for_g ();
+  check_null ();
   test_locale ();
 
   if (getenv ("MPFR_CHECK_LIBC_PRINTF"))
